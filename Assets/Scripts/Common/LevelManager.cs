@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -9,10 +10,12 @@ public class LevelManager : MonoBehaviour
      * For configuring level settings, plus storing global variable references
      */
 
-    public bool IsMenu;
+    public bool IsPaused;
+    public Text PauseText;
 
     [Space(10)]
     [Header("Level Settings")]
+    public bool IsMenu;
     public string StartMusic;
 
     // Gameplay objects
@@ -29,7 +32,7 @@ public class LevelManager : MonoBehaviour
         instance = this;
 
         // Find all relevant gameplay objects if we know we aren't in the titlescreen
-        if (IsMenu)
+        if (!IsMenu)
         {
             player = FindObjectOfType<PlayerController>();
         }
@@ -51,11 +54,23 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
+        if (!IsMenu)
+        {
+            // Pausing game
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                IsPaused = !IsPaused;
+                PauseText.gameObject.SetActive(IsPaused);
+            }
+        }
+
+        // Quitting game
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
         }
 
+        // Debug
         if (Input.GetKeyDown(KeyCode.G))
         {
             Debug.Log(AudioManager.instance.MusicSource.volume);
