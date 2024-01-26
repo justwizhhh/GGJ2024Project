@@ -741,7 +741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09245306165694c4786c20bca1bbef54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentJoke: Why did the chicken chicken chicken chicken
+  CurrentJoke: why did the chicken chicken chicken chicken
 --- !u!114 &1490308367
 MonoBehaviour:
   m_ObjectHideFlags: 0

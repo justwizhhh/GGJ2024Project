@@ -13,6 +13,7 @@ public class JokePrompt : MonoBehaviour
 
     Event input;
     TMP_Text tmptext;
+    TMP_Font tmpfont;
     BubbleManager bm;
 
     private void Awake()
@@ -31,6 +32,10 @@ public class JokePrompt : MonoBehaviour
     private void OnGUI()
     {
         input = Event.current;
+    }
+
+    private void Update()
+    {
         if (input.isKey)
         {
             // Check for correct letter
@@ -38,26 +43,26 @@ public class JokePrompt : MonoBehaviour
             char letter = key.ToCharArray()[0];
             if (key != "None")
             {
-                if (key == "Space")
+                // Check for correct letters
+                if (char.ToLower(letter) == CurrentJoke[typePoint] || letter == CurrentJoke[typePoint])
                 {
-                    typeProgress += " ";
+                    typePoint++;
+                    typeProgress += letter.ToString().ToLower();
                 }
                 else
                 {
-                    if (char.ToLower(letter) == CurrentJoke[typePoint] || letter == CurrentJoke[typePoint])
+                    if (key == "Space" && CurrentJoke[typePoint].ToString() == " ")
                     {
-                        typeProgress += letter.ToString();
+                        typePoint++;
+                        typeProgress += " ";
                     }
                 }
 
-                Debug.Log(letter);
+                if (typeProgress == CurrentJoke)
+                {
+                    Debug.Log("Well done okay");
+                }
             }
         }
-    }
-
-    
-    void Update()
-    {
-        
     }
 }
