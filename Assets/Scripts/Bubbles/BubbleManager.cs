@@ -11,7 +11,7 @@ public class BubbleManager : MonoBehaviour
     [SerializeField] private float maxheight;
     [SerializeField] private float minheight;
 
-    private List<SpawnedBubble> bubbleList = new List<SpawnedBubble>();
+    public List<SpawnedBubble> bubbleList = new List<SpawnedBubble>();
     // Start is called before the first frame update
     void Start()
     {
@@ -57,7 +57,7 @@ public class BubbleManager : MonoBehaviour
         newBubble.TMPRO.text = word;
         newBubble.rigidBody.gravityScale = -0.03f * floatingSpeed;
         
-        
+        // Get width of the TMPRO
         
         bubbleList.Add(newBubble);
     }
