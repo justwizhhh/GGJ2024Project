@@ -13,7 +13,6 @@ public class JokePrompt : MonoBehaviour
 
     Event input;
     TMP_Text tmptext;
-    TMP_Font tmpfont;
     BubbleManager bm;
 
     private void Awake()
