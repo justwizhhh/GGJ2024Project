@@ -1150,8 +1150,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -181.3, y: -70}
-  m_SizeDelta: {x: 481.5663, y: 188.5115}
+  m_AnchoredPosition: {x: -181.3, y: -14.3}
+  m_SizeDelta: {x: 481.5663, y: 315.91}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2040728231
 MonoBehaviour:
@@ -1186,20 +1186,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '-credits
-
-    -credits
-
-    -credits
-
-    -credits
-
-    -credits
-
-
-    Made
-    in 48 hours for Global Game Jam 2024 (UWE Bristol Foundry GGJ24), with the theme:
-    "Make Me Laugh"'
+  m_Text: "Programming:\n - Norbert Kupeczki\n - James Kernshall\n - Dominik Heiler\n
+    - Hadley Wilson\n - Tom Roberts\n\nArt:\n - Judit Molnar\n\nMusic and Sound:\n
+    -\n\nMade in 48 hours for Global Game Jam 2024 (UWE Bristol Foundry GGJ24), with
+    the theme: \"Make Me Laugh\""
 --- !u!222 &2040728232
 CanvasRenderer:
   m_ObjectHideFlags: 0
