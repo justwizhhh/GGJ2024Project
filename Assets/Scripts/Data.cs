@@ -14,8 +14,9 @@ namespace Enumerations
 {
     public enum ObjectType
     {
-        HARMFUL     = 0,
-        BENEFICIAL  = 1
+        NEUTRAL     = 0,
+        HARMFUL     = 1,
+        BENEFICIAL  = 2
     }
 }
 

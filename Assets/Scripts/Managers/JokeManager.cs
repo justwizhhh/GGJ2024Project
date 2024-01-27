@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Linq;
 
 public class JokeManager : MonoBehaviour
 {
     private TMP_Text jokeText;
-    private Queue<JokeSO> listOfJokes;
+    private List<JokeSO> listOfAllJokes;
+    private Queue<JokeSO> queueOfJokes;
 
     private void Awake()
     {
         jokeText = GetComponent<TMP_Text>();
-        listOfJokes = CreateQueueOfJokes();
+        queueOfJokes = new();
+
+        listOfAllJokes = LoadJokeObjects();
+        ShuffleListOfAllJokes();
     }
 
     // Start is called before the first frame update
@@ -26,10 +31,24 @@ public class JokeManager : MonoBehaviour
         
     }
 
-    private Queue<JokeSO> CreateQueueOfJokes()
+    private void ShuffleListOfAllJokes()
     {
-        // Shuffle the jokes in the jokes database and arrange them into a queue, then return the queue
-        return new Queue<JokeSO>(); // placeholder
+        while(listOfAllJokes.Count > 0)
+        {
+            int randomIdx = (int)UnityEngine.Random.Range(0, listOfAllJokes.Count);
+            queueOfJokes.Enqueue(listOfAllJokes[randomIdx]);
+            listOfAllJokes.RemoveAt(randomIdx);
+        }
+    }
+
+    private List<JokeSO> LoadJokeObjects()
+    {
+        return Resources.LoadAll<JokeSO>("Jokes").ToList();
+    }
+
+    public JokeSO GetNewJokesFromQueue()
+    {
+        return queueOfJokes.Dequeue();
     }
 
     public string[] GetJokeAsSplitText()
