@@ -12,6 +12,6 @@ public class ScoreBoard : MonoBehaviour
 
     public void setScore(int value, int hiScoreValue)
     {
-        scoreText.SetText("SCORE:\n" + value.ToString() + "\n HIGH SCORE:\n" + hiScoreValue);
+        scoreText.SetText("SCORE: " + value.ToString() + "\n \n <b>HIGH SCORE: " + hiScoreValue + "</b>");
     }
 }

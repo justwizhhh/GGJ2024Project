@@ -10,7 +10,6 @@ public class PlayerData : MonoBehaviour
 
     public int maxHealth = 100;
     public int currentHealth;
-    public HealthBar healthBar;
     public ScoreBoard scoreBoard;
     public int currentScore = 0;
     public int highScore;
@@ -26,7 +25,6 @@ public class PlayerData : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        healthBar.setMaxHealth(maxHealth);
         EventHandler.ChangeHealth += ChangeHealth;
         highScore = PlayerPrefs.GetInt("HighScore", 0);
         scoreBoard.setScore(currentScore, highScore);
@@ -61,7 +59,7 @@ public class PlayerData : MonoBehaviour
             currentHealth = 0;
             EventHandler.OnDeath();
         }
-        healthBar.setHealth();
+        //healthBar.setHealth();
         UpdateSprite();
     }
 
