@@ -498,6 +498,7 @@ GameObject:
   m_Component:
   - component: {fileID: 309949389}
   - component: {fileID: 309949388}
+  - component: {fileID: 309949390}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -517,13 +518,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ed77e83ff9c7224f8f3a8fd4139a997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <music>k__BackingField:
-    Guid:
-      Data1: -477876834
-      Data2: 1269791149
-      Data3: 2096403349
-      Data4: -172995480
-    Path: event:/Music/Main_music
 --- !u!4 &309949389
 Transform:
   m_ObjectHideFlags: 0
@@ -539,6 +533,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1721392620}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &309949390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309949387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acfc9174b4ac6e7438d073fdc018e20e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <menuMusic>k__BackingField:
+    Guid:
+      Data1: -1061593122
+      Data2: 1273465964
+      Data3: 348403375
+      Data4: 2085890119
+    Path: event:/Music/Start_music
+  <gameMusic>k__BackingField:
+    Guid:
+      Data1: -477876834
+      Data2: 1269791149
+      Data3: 2096403349
+      Data4: -172995480
+    Path: event:/Music/Main_music
+  <endOfGameMusic>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <creditsMusic>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  <testOneShot>k__BackingField:
+    Guid:
+      Data1: 1196644887
+      Data2: 1221209468
+      Data3: 767518865
+      Data4: 1610882186
+    Path: event:/Player/Move_approved
 --- !u!1 &792771095
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,13 +778,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jokeText: {fileID: 128244562}
   punchlineText: {fileID: 91660285}
-  TestSound:
-    Guid:
-      Data1: 1196644887
-      Data2: 1221209468
-      Data3: 767518865
-      Data4: 1610882186
-    Path: event:/Player/Move_approved
 --- !u!1 &1709691609
 GameObject:
   m_ObjectHideFlags: 0

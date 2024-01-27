@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +14,6 @@ public class LevelManager : MonoBehaviour
     [Space(10)]
     [Header("Level Settings")]
     public bool IsMenu;
-    public string StartMusic;
 
     // Gameplay objects
     [HideInInspector] public PlayerController player;
@@ -43,7 +40,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        //if (StartMusic != null) { AudioManager.instance.PlayMusic(StartMusic, 1); }
+        AudioManager.instance.StartPlayingMusic(Enumerations.MusicType.MAIN_MENU);
     }
 
     // Transition into a new scene

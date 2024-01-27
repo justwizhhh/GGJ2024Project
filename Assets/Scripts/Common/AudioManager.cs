@@ -1,27 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using Enumerations;
 
 public class AudioManager : MonoBehaviour
 {
-    /*
-     * Audio Manager Class
-     * For playing sound-effects and music anywhere in the game
-     */
-
     [Header("Volume Settings")]
     public static float MusicVolume = 1;
     public static float SoundVolume = 1;
 
-    [field: Space(10)]
-    [field: Header("Music")]
-    [field: SerializeField] public EventReference music { get; private set; }
-
     private EventInstance musicEventInstance;
 
     public static AudioManager instance { get; private set; }
+
+    private Vector3 audioPosition;
 
     private void Awake()
     {
@@ -31,24 +23,61 @@ public class AudioManager : MonoBehaviour
             return;
         }
         instance = this;
+
+        audioPosition = FindObjectOfType<StudioListener>().transform.position;
     }
 
     void Start()
     {
-         EventHandler.PlayOneShotAudio += PlayOneShot;
-        StartMusic(music);
-    }
-   
+        StartPlayingMusic(MusicType.GAME_MUSIC);
+    }   
 
-    private void PlayOneShot(EventReference sound, Vector3 worldPos)
+    public void PlayOneShot(EventReference sound)
     {
-        RuntimeManager.PlayOneShot(sound, worldPos);
+        RuntimeManager.PlayOneShot(sound, audioPosition);
     }
 
-    private void StartMusic(EventReference music)
+    /// <summary>
+    /// Starts to play music of the given music type
+    /// </summary>
+    /// <param name="musicType"></param>
+    /// <param name="allowFadeOut"></param>
+    public void StartPlayingMusic(MusicType musicType, bool allowFadeOut = true)
     {
-        musicEventInstance = CreateEventInstance(music);
+        musicEventInstance.getPlaybackState(out var result);
+        if (result == PLAYBACK_STATE.PLAYING)
+        {
+            StopPlayingMusic(allowFadeOut);
+        }
+
+        switch (musicType)
+        {
+            case MusicType.MAIN_MENU:
+                musicEventInstance = CreateEventInstance(FMODLib.instance.menuMusic);
+                break;
+            case MusicType.GAME_MUSIC:
+                musicEventInstance = CreateEventInstance(FMODLib.instance.gameMusic);
+                break;
+            case MusicType.GAME_OVER:
+                musicEventInstance = CreateEventInstance(FMODLib.instance.endOfGameMusic);
+                break;
+            case MusicType.CREDITS:
+                musicEventInstance = CreateEventInstance(FMODLib.instance.creditsMusic);
+                break;
+            default:
+                break;
+        }
+        
         musicEventInstance.start();
+    }
+
+    /// <summary>
+    /// Stops playing the music
+    /// </summary>
+    /// <param name="allowFadeOut"></param>
+    public void StopPlayingMusic(bool allowFadeOut)
+    {
+        musicEventInstance.stop(allowFadeOut? FMOD.Studio.STOP_MODE.ALLOWFADEOUT : FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     private EventInstance CreateEventInstance(EventReference soundEvent)
@@ -75,6 +104,4 @@ public class AudioManager : MonoBehaviour
         //    source.volume = SoundVolume;
         //}
     }
-
-    
 }
