@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
-public class Throwable : MonoBehaviour
+public class ThrowableObject : MonoBehaviour
 {
     public Transform target;
     public float arcHeight = 5f;
@@ -71,4 +72,6 @@ public class Throwable : MonoBehaviour
             Debug.Log("ThrowableObject touched player and destroyed.");
         }
     }
+
+
 }

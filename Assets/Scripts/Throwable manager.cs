@@ -1,19 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
-public class Throwablemanager : MonoBehaviour
+public class ThrowableManager : MonoBehaviour
 {
+    public AudienceApproval audienceApproval; // Reference to the AudienceApproval script
     public Transform[] throwableSpawnLocations;
-    public GameObject throwablePrefab;
+    public GameObject throwablePrefabPositive;
+    public GameObject throwablePrefabNegative;
     public int maxThrowables = 5;
 
-    private GameObject player; // Reference to the player object
+    private GameObject player;
     private int activeThrowables = 0;
 
-    public float minInterval = 5f; // Minimum interval between throwables
-    public float maxInterval = 15f; // Maximum interval between throwables
-    public int maxThrowablesAtOnce = 3; // Maximum throwables spawned at once
+    public float minInterval = 5f;
+    public float maxInterval = 15f;
+
+    public float minIntervalModifier = 0.01f; // Adjusted modifier for closer to 0
+    public float maxIntervalModifier = 0.2f;  // Adjusted modifier for closer to 100
+
+    private float originalMinInterval;
+    private float originalMaxInterval;
 
     void Start()
     {
@@ -23,18 +29,23 @@ public class Throwablemanager : MonoBehaviour
             Debug.LogError("Player object not found! Make sure it has the 'Player' tag.");
         }
 
-        InitializeThrowables(1); // Start with 1 throwable
+        if (audienceApproval == null)
+        {
+            Debug.LogError("AudienceApproval reference is not set in ThrowableManager!");
+        }
 
-        // Start invoking the method to spawn throwables at random intervals
-        InvokeRepeating("SpawnThrowablesAtInterval", Random.Range(minInterval, maxInterval), Random.Range(minInterval, maxInterval));
+        originalMinInterval = minInterval;
+        originalMaxInterval = maxInterval;
+
+        InitializeThrowables(1);
+        StartCoroutine(SpawnThrowablesRandomly());
     }
 
     void Update()
     {
-        // For testing purposes, increase the number of throwables when the space key is pressed
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            int additionalThrowables = Random.Range(1, 4); // Randomly add 1 to 3 throwables
+            int additionalThrowables = Random.Range(1, 4);
             IncreaseThrowables(additionalThrowables);
         }
     }
@@ -44,7 +55,6 @@ public class Throwablemanager : MonoBehaviour
         for (int i = 0; i < numThrowables; i++)
         {
             SpawnThrowable();
-            Debug.Log("ThrowableManager initialized throwable.");
         }
     }
 
@@ -74,13 +84,14 @@ public class Throwablemanager : MonoBehaviour
 
         if (spawnLocation.childCount == 0)
         {
+            GameObject throwablePrefab = DetermineThrowablePrefab();
+
             GameObject throwable = Instantiate(throwablePrefab, spawnLocation.position, Quaternion.identity);
-            Throwable throwableObject = throwable.GetComponent<Throwable>();
+            ThrowableObject throwableObject = throwable.GetComponent<ThrowableObject>();
 
             if (throwableObject != null)
             {
-                throwableObject.target = player.transform; // Set the player object as the target
-                Debug.Log("ThrowableManager spawned throwable at position: " + spawnLocation.position);
+                throwableObject.target = player.transform;
             }
         }
         else
@@ -89,35 +100,52 @@ public class Throwablemanager : MonoBehaviour
         }
     }
 
-    // Method to spawn multiple throwables at different spawn locations
-    void SpawnThrowablesAtInterval()
+    GameObject DetermineThrowablePrefab()
     {
-        if (throwableSpawnLocations.Length == 0)
+        float approvalRating = audienceApproval.slider.value;
+        float positiveEffect = audienceApproval.GetPositiveEffect(approvalRating);
+        float negativeEffect = audienceApproval.GetNegativeEffect(approvalRating);
+
+        if (positiveEffect >= negativeEffect)
         {
-            Debug.LogError("No throwable spawn locations assigned.");
-            return;
+            return throwablePrefabPositive;
+        }
+        else
+        {
+            return throwablePrefabNegative;
+        }
+    }
+
+    IEnumerator SpawnThrowablesRandomly()
+    {
+        while (true)
+        {
+            AdjustInterval();
+
+            float interval = Random.Range(minInterval, maxInterval);
+            yield return new WaitForSeconds(interval);
+
+            if (activeThrowables < maxThrowables)
+            {
+                SpawnThrowable();
+                activeThrowables++;
+            }
+        }
+    }
+
+    void AdjustInterval()
+    {
+        float approvalRating = audienceApproval.slider.value;
+
+        // Adjust the interval modifiers based on approval rating
+        float modifier = 1f;
+
+        if (approvalRating < 5 || approvalRating > 95)
+        {
+            modifier = Mathf.Lerp(minIntervalModifier, maxIntervalModifier, Mathf.Abs(approvalRating - 50) / 50f);
         }
 
-        for (int i = 0; i < maxThrowablesAtOnce; i++)
-        {
-            int randomSpawnIndex = Random.Range(0, throwableSpawnLocations.Length);
-            Transform spawnLocation = throwableSpawnLocations[randomSpawnIndex];
-
-            if (spawnLocation.childCount == 0)
-            {
-                GameObject throwable = Instantiate(throwablePrefab, spawnLocation.position, Quaternion.identity);
-                Throwable throwableObject = throwable.GetComponent<Throwable>();
-
-                if (throwableObject != null)
-                {
-                    throwableObject.target = player.transform; // Set the player object as the target
-                    Debug.Log("ThrowableManager spawned throwable at position: " + spawnLocation.position);
-                }
-            }
-            else
-            {
-                Debug.LogWarning("Spawn location already has a throwable.");
-            }
-        }
+        minInterval = originalMinInterval * modifier;
+        maxInterval = originalMaxInterval * modifier;
     }
 }
