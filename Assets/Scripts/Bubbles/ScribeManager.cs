@@ -164,6 +164,7 @@ public class ScribeManager : MonoBehaviour
         {
             //Punchline Finished
             lastOfJoke = false;
+            EventHandler.OnFullJoke();
             GenerateJoke();
         }
     }
