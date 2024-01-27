@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        if (StartMusic != null) { AudioManager.instance.PlayMusic(StartMusic, 1); }
+        // TODO: start to play music here using FMOD
     }
 
     // Transition into a new scene
@@ -68,12 +68,6 @@ public class LevelManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
-        }
-
-        // Debug
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            Debug.Log(AudioManager.instance.MusicSource.volume);
         }
     }
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class EventHandler : MonoBehaviour
 {
@@ -17,8 +18,16 @@ public class EventHandler : MonoBehaviour
     public static event Action TypeWrong;
     public static event Action LoadJoke;
 
+    // --- AUDIO ---
+    public static event Action<EventReference, Vector3> PlayOneShotAudio;
 
 
+    private static Vector3 soundSourcePosition;
+
+    private void Awake()
+    {
+        soundSourcePosition = FindObjectOfType<StudioListener>().transform.position;
+    }
 
     /// <summary>
     /// Messages all subscirbers when a word is typed WRONG
@@ -96,5 +105,10 @@ public class EventHandler : MonoBehaviour
     public static void OnLoadJoke()
     {
         LoadJoke?.Invoke();
+    }
+
+    public static void OnPlayOneShotAudio(EventReference sound)
+    {
+        PlayOneShotAudio?.Invoke(sound, soundSourcePosition);
     }
 }
