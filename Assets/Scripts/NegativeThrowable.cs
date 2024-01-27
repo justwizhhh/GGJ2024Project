@@ -5,6 +5,17 @@ using UnityEngine;
 public class NegativeThrowable : MonoBehaviour
 {
     public MonoBehaviour scriptToDisable;
+    [SerializeField] float clickRange = 4;
+
+    void Start()
+    {
+        EventHandler.Click += OnClick;
+    }
+
+    private void OnDestroy()
+    {
+        EventHandler.Click -= OnClick;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -17,21 +28,17 @@ public class NegativeThrowable : MonoBehaviour
 
             //Debug.Log("ThrowableObject touched player and destroyed.");
         }
-    }
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
+        else if (collision.CompareTag("Kill Zones")) 
         {
-            Vector2 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(clickPosition, Vector2.zero);
+            Destroy(gameObject);
+        }
+    }
 
-            if (hit.collider != null && hit.collider.gameObject == gameObject)
-            {
-                if (scriptToDisable != null)
-                {
-                    DisableScript(scriptToDisable);
-                }
-            }
+    void OnClick(Vector2 position)
+    {
+        if (Vector2.Distance(position, new Vector2(transform.position.x, transform.position.y)) < clickRange)
+        {
+            DisableScript(scriptToDisable);
         }
     }
 

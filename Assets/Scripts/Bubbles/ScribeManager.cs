@@ -71,7 +71,7 @@ public class ScribeManager : MonoBehaviour
         for (int i = 0; i < blankAmount; i++)
         {
             int blank = 0;
-            if (i > splitWords.Length) // Stops more then the phrases blanks being generated
+            if (i > splitWords.Length - 1) // Stops more then the phrases blanks being generated
                 continue;
 
             for (int whileLoop = 0; whileLoop < 100; whileLoop++) 

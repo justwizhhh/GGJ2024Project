@@ -7,6 +7,8 @@ public class EventHandler : MonoBehaviour
     public static event Action<int> ChangeRowdiness;
     public static event Action<int> ChangeScore;
 
+    public static event Action<Vector2> Click;
+
     public static event Action<string> WordTyped;
     public static event Action<char> LetterTyped;
 
@@ -15,6 +17,7 @@ public class EventHandler : MonoBehaviour
     public static event Action AnswerWrong;
     public static event Action TypeWrong;
     public static event Action LoadJoke;
+
 
 
     /// <summary>
@@ -34,6 +37,11 @@ public class EventHandler : MonoBehaviour
     public static void OnTypeWord(string word)
     {
         WordTyped?.Invoke(word);
+    }
+
+    public static void OnClick(Vector2 position)
+    {
+        Click?.Invoke(position);
     }
 
     /// <summary>

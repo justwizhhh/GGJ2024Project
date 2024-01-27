@@ -7,10 +7,10 @@ public class ThrowableManager : MonoBehaviour
     public Transform[] throwableSpawnLocations;
     public GameObject throwablePrefabPositive;
     public GameObject throwablePrefabNegative;
-    public int maxThrowables = 5;
 
     private GameObject player;
-    private int activeThrowables = 0;
+
+    private float timer = 0;
 
     public float minInterval = 5f;
     public float maxInterval = 15f;
@@ -41,15 +41,6 @@ public class ThrowableManager : MonoBehaviour
         StartCoroutine(SpawnThrowablesRandomly());
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            int additionalThrowables = Random.Range(1, 4);
-            IncreaseThrowables(additionalThrowables);
-        }
-    }
-
     void InitializeThrowables(int numThrowables)
     {
         for (int i = 0; i < numThrowables; i++)
@@ -60,6 +51,7 @@ public class ThrowableManager : MonoBehaviour
 
     void IncreaseThrowables(int additionalThrowables)
     {
+        /*
         if (activeThrowables + additionalThrowables <= maxThrowables)
         {
             InitializeThrowables(additionalThrowables);
@@ -68,7 +60,7 @@ public class ThrowableManager : MonoBehaviour
         else
         {
             Debug.LogWarning("Cannot exceed the maximum number of throwables.");
-        }
+        }*/
     }
 
     void SpawnThrowable()
@@ -129,19 +121,15 @@ public class ThrowableManager : MonoBehaviour
 
     IEnumerator SpawnThrowablesRandomly()
     {
-        while (true)
-        {
-            AdjustInterval();
+        AdjustInterval();
 
-            float interval = Random.Range(minInterval, maxInterval);
-            yield return new WaitForSeconds(interval);
+        float interval = Random.Range(minInterval, maxInterval);
+        Debug.Log(interval);
+        yield return new WaitForSeconds(interval);
 
-            if (activeThrowables < maxThrowables)
-            {
-                SpawnThrowable();
-                activeThrowables++;
-            }
-        }
+        SpawnThrowable();
+
+        StartCoroutine(SpawnThrowablesRandomly());
     }
 
     void AdjustInterval()

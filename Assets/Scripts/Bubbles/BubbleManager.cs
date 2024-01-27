@@ -50,7 +50,7 @@ public class BubbleManager : MonoBehaviour
             {
                 bubble.rigidBody.MovePosition(new Vector2(bubble.transform.position.x, minheight));
                 bubble.rigidBody.gravityScale = -0.03f * floatingSpeed * 3;
-                bubble.rigidBody.velocity = new Vector2(bubble.rigidBody.velocity.x, 0.1f);
+                bubble.rigidBody.velocity = new Vector2(bubble.rigidBody.velocity.x, 2.7f);
             }
             else 
             {

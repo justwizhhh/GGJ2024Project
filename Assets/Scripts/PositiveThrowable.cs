@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class PositiveThrowable : MonoBehaviour
 {
+    [SerializeField] private float clickMultipler = 4;
+    [SerializeField] private float clickRange = 2;
     // Start is called before the first frame update
     void Start()
     {
-
+        EventHandler.Click += OnClick;
     }
 
+    private void OnDestroy()
+    {
+        EventHandler.Click -= OnClick;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -20,25 +26,25 @@ public class PositiveThrowable : MonoBehaviour
 
             //Debug.Log("ThrowableObject touched player and destroyed.");
         }
+
+        else if (collision.CompareTag("Kill Zones"))
+        {
+            Destroy(gameObject);
+        }
     }
 
     void GrantPoints(float mulitplier) 
     {
-        
+        PlayerData.instance.ChangeScore(mulitplier);
     }
 
-
-    void Update()
+    void OnClick(Vector2 position) 
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Vector2.Distance(position, new Vector2(transform.position.x, transform.position.y)) < clickRange) 
         {
-            Vector2 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            RaycastHit2D hit = Physics2D.Raycast(clickPosition, Vector2.zero);
-
-            if (hit.collider != null && hit.collider.gameObject == gameObject)
-            {
-                GrantPoints(2.5f);
-            }
+            GrantPoints(clickMultipler);
+            Destroy(gameObject);
         }
+
     }
 }

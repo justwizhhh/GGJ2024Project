@@ -18,5 +18,9 @@ public class MouseCollider : MonoBehaviour
     void Update()
     {
         rb.MovePosition(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        if (Input.GetMouseButtonDown(0))
+        {
+            EventHandler.OnClick(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        }
     }
 }

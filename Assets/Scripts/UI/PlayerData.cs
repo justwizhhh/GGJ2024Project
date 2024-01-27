@@ -5,12 +5,19 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
+    public static PlayerData instance;
+
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBar healthBar;
     public ScoreBoard scoreBoard;
     public int currentScore = 0;
     public int highScore;
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -51,15 +58,15 @@ public class PlayerData : MonoBehaviour
             currentHealth = 0;
             Debug.Log("Dead!!");
         }
-        healthBar.setHealth(currentHealth);
+        healthBar.setHealth();
     }
 
-    void ChangeScore(int multiplier)
+    public void ChangeScore(float multiplier)
     {
-        currentScore += (UnityEngine.Random.Range(1, 15) * multiplier);
-        if (currentScore >= 999999)
+        currentScore += (int)(UnityEngine.Random.Range(1.0f, 15.0f) * multiplier);
+        if (currentScore >= 99999999)
         {
-            currentScore = 999999;
+            currentScore = 99999999;
         }
         if (currentScore > highScore)
         {

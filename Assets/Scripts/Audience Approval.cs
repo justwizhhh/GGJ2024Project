@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class AudienceApproval : MonoBehaviour
@@ -14,9 +15,22 @@ public class AudienceApproval : MonoBehaviour
     public float maxInterval;
     public int activeThrowables;
 
+    private float basicTimer = 0;
+    [SerializeField] private float tickTimer = 1;
     private void Start()
     {
-        
+        SetApproval(50);
+        EventHandler.AnswerCorrect += JokeCorrect;
+        EventHandler.AnswerWrong += JokeWrong;
+        EventHandler.TypeWrong += TypeWrong;
+    }
+
+    private void Update()
+    {
+        if (basicTimer > tickTimer) 
+        {
+            AddApproval(-1);
+        }
     }
 
     public void SetActiveThrowables(int count)
@@ -30,24 +44,31 @@ public class AudienceApproval : MonoBehaviour
         SetApproval(approval);
     }
 
-    public void SetApproval(int approval)
+    public void AddApproval(int approval)
     {
-        healthUI.setHealth(approval);
+        slider.value += approval;
+        healthUI.setHealth();
     }
 
-    private void Update()
+    public void SetApproval(int approval)
     {
-        
+        slider.value = approval;
+        healthUI.setHealth();
     }
 
     private void TypeWrong() 
     {
-        
+        AddApproval(-5);
     }
 
     private void JokeCorrect() 
     {
-        
+        AddApproval(40);
+    }
+
+    private void JokeWrong()
+    {
+        AddApproval(-30);
     }
 
     public float GetPositiveEffect(float approvalRating)
