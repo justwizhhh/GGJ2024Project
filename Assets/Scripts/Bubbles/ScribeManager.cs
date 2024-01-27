@@ -144,7 +144,6 @@ public class ScribeManager : MonoBehaviour
             Debug.Log("FAILURE");
             textmeshPro.color = Color.red;
             Invoke("GenerateJoke", jokeCoolDown);
-            textmeshPro.color = Color.black;
             EventHandler.OnWrongAnswer();
         }
     }

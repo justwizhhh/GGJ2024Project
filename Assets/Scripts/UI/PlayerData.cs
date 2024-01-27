@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerData : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerData : MonoBehaviour
     public ScoreBoard scoreBoard;
     public int currentScore = 0;
     public int highScore;
+    [SerializeField] private Sprite[] playerSprites;
 
     private void Awake()
     {

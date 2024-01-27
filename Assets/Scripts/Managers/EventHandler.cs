@@ -17,6 +17,7 @@ public class EventHandler : MonoBehaviour
     public static event Action AnswerWrong;
     public static event Action TypeWrong;
     public static event Action LoadJoke;
+    public static event Action PlayerDeath;
 
 
 
@@ -39,10 +40,30 @@ public class EventHandler : MonoBehaviour
         WordTyped?.Invoke(word);
     }
 
+
+
+    /// <summary>
+    /// Messages all subscirbers On Click
+    /// </summary>
     public static void OnClick(Vector2 position)
     {
         Click?.Invoke(position);
     }
+
+
+
+
+
+    /// <summary>
+    /// Messages all Subs when the player dies.
+    /// </summary>
+    /// <param name="amount"></param>
+    public static void OnDeath()
+    {
+        PlayerDeath?.Invoke();
+    }
+
+
 
     /// <summary>
     /// Messages all subscirbers about the change in the player's health value
