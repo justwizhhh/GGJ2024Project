@@ -12,7 +12,7 @@ public class NegativeThrowable : MonoBehaviour
         {
             Destroy(gameObject);
             //Negative Action:
-            EventHandler.OnChangeHealth(-25);
+            EventHandler.OnChangeHealth(-1);
 
 
             //Debug.Log("ThrowableObject touched player and destroyed.");

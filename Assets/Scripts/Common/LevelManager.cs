@@ -40,7 +40,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        AudioManager.instance.StartPlayingMusic(Enumerations.MusicType.MAIN_MENU);
+        //AudioManager.instance.StartPlayingMusic(Enumerations.MusicType.MAIN_MENU);
     }
 
     // Transition into a new scene
@@ -54,17 +54,15 @@ public class LevelManager : MonoBehaviour
         if (!IsMenu)
         {
             // Pausing game
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
                 IsPaused = !IsPaused;
                 PauseText.gameObject.SetActive(IsPaused);
+                if (IsPaused)
+                    Time.timeScale = 0;
+                else
+                    Time.timeScale = 1;
             }
-        }
-
-        // Quitting game
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
         }
     }
 }

@@ -37,6 +37,7 @@ public class ScribeManager : MonoBehaviour
 
     void GenerateJoke() 
     {
+        textmeshPro.color = Color.black;
         NewJoke(jokeManager.GetNextJoke());
     }
 
@@ -134,14 +135,16 @@ public class ScribeManager : MonoBehaviour
             textmeshPro.text = currentLineOfJoke;
             splitWords = currentLineOfJoke.Split(' ');
             EventHandler.OnCorrectAnswer();
-
+            textmeshPro.color = Color.green;
             Invoke("FinishedLine", jokeCoolDown);
 
         }
         else 
         {
             Debug.Log("FAILURE");
+            textmeshPro.color = Color.red;
             Invoke("GenerateJoke", jokeCoolDown);
+            textmeshPro.color = Color.black;
             EventHandler.OnWrongAnswer();
         }
     }
@@ -155,7 +158,7 @@ public class ScribeManager : MonoBehaviour
             currentLineOfJoke = fullJoke.jokePunchline;
             GenerateBlanks();
 
-
+            textmeshPro.color = Color.black;
             textmeshPro.text = OutputPrompt();
         }
         else 

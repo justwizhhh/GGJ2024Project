@@ -9,9 +9,15 @@ public class AudienceApproval : MonoBehaviour
     public Slider slider;
     public AnimationCurve positiveEffectCurve;
     public AnimationCurve negativeEffectCurve;
+    public HealthBar healthUI;
     public float minInterval;
     public float maxInterval;
     public int activeThrowables;
+
+    private void Start()
+    {
+        
+    }
 
     public void SetActiveThrowables(int count)
     {
@@ -21,12 +27,27 @@ public class AudienceApproval : MonoBehaviour
     public void SetMaxApproval(int approval)
     {
         slider.maxValue = approval;
-        slider.value = approval;
+        SetApproval(approval);
     }
 
     public void SetApproval(int approval)
     {
-        slider.value = approval;
+        healthUI.setHealth(approval);
+    }
+
+    private void Update()
+    {
+        
+    }
+
+    private void TypeWrong() 
+    {
+        
+    }
+
+    private void JokeCorrect() 
+    {
+        
     }
 
     public float GetPositiveEffect(float approvalRating)

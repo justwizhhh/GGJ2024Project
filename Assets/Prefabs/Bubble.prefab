@@ -135,7 +135,7 @@ Rigidbody2D:
   m_Mass: 1.12
   m_LinearDrag: 0.85
   m_AngularDrag: 0.05
-  m_GravityScale: -0.03
+  m_GravityScale: -0.09
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TMPRO: {fileID: 7561607017602651846}
+  text: 
   rigidBody: {fileID: 3251807461576221118}
 --- !u!1 &7417040918474942681
 GameObject:
