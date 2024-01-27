@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +14,6 @@ public class LevelManager : MonoBehaviour
     [Space(10)]
     [Header("Level Settings")]
     public bool IsMenu;
-    public string StartMusic;
 
     // Gameplay objects
     [HideInInspector] public PlayerController player;
@@ -43,7 +40,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        if (StartMusic != null) { AudioManager.instance.PlayMusic(StartMusic, 1); }
+        //AudioManager.instance.StartPlayingMusic(Enumerations.MusicType.MAIN_MENU);
     }
 
     // Transition into a new scene
@@ -57,23 +54,15 @@ public class LevelManager : MonoBehaviour
         if (!IsMenu)
         {
             // Pausing game
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
                 IsPaused = !IsPaused;
                 PauseText.gameObject.SetActive(IsPaused);
+                if (IsPaused)
+                    Time.timeScale = 0;
+                else
+                    Time.timeScale = 1;
             }
-        }
-
-        // Quitting game
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-
-        // Debug
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            Debug.Log(AudioManager.instance.MusicSource.volume);
         }
     }
 }

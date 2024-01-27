@@ -29,8 +29,15 @@ public class JokeManager : MonoBehaviour
         // TEST CODE... TO BE REMOVED
         if(Input.GetKeyUp(KeyCode.N) && currentJoke != null)
         {
+            AudioManager.instance.PlayOneShot(FMODLib.instance.testOneShot);
             currentJoke = GetNextJoke();
         }
+        if (Input.GetKeyUp(KeyCode.M))
+        {
+            AudioManager.instance.StartPlayingMusic(Enumerations.MusicType.MAIN_MENU, false);
+            currentJoke = GetNextJoke();
+        }
+
     }
 
     /// <summary>
@@ -117,7 +124,7 @@ public class JokeManager : MonoBehaviour
         jokeText.SetText(joke.jokeQuestion);
         punchlineText.SetText(joke.jokePunchline);
 
-        EventHandler.OnLoadJoke();
+        //EventHandler.OnLoadJoke();
         return joke;
     }
 }

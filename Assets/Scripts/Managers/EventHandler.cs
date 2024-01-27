@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EventHandler : MonoBehaviour
@@ -9,14 +7,17 @@ public class EventHandler : MonoBehaviour
     public static event Action<int> ChangeRowdiness;
     public static event Action<int> ChangeScore;
 
+    public static event Action<Vector2> Click;
+
     public static event Action<string> WordTyped;
     public static event Action<char> LetterTyped;
 
+    public static event Action FullJokeTold;
     public static event Action AnswerCorrect;
     public static event Action AnswerWrong;
     public static event Action TypeWrong;
     public static event Action LoadJoke;
-
+    public static event Action PlayerDeath;
 
 
 
@@ -38,6 +39,31 @@ public class EventHandler : MonoBehaviour
     {
         WordTyped?.Invoke(word);
     }
+
+
+
+    /// <summary>
+    /// Messages all subscirbers On Click
+    /// </summary>
+    public static void OnClick(Vector2 position)
+    {
+        Click?.Invoke(position);
+    }
+
+
+
+
+
+    /// <summary>
+    /// Messages all Subs when the player dies.
+    /// </summary>
+    /// <param name="amount"></param>
+    public static void OnDeath()
+    {
+        PlayerDeath?.Invoke();
+    }
+
+
 
     /// <summary>
     /// Messages all subscirbers about the change in the player's health value
@@ -80,6 +106,15 @@ public class EventHandler : MonoBehaviour
     public static void OnCorrectAnswer()
     {
         AnswerCorrect?.Invoke();
+    }
+
+
+    /// <summary>
+    /// Messages all subscirbers when the player fully tells the joke
+    /// </summary>
+    public static void OnFullJoke()
+    {
+        FullJokeTold?.Invoke();
     }
 
     /// <summary>

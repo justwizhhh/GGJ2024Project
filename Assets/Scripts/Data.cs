@@ -12,6 +12,14 @@ namespace GeneralData
 
 namespace Enumerations
 {
+    public enum MusicType
+    {
+        MAIN_MENU = 0,
+        GAME_MUSIC = 1,
+        GAME_OVER = 2,
+        CREDITS = 3
+    }
+
     public enum ObjectType
     {
         NEUTRAL     = 0,

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Joke0006
   m_EditorClassIdentifier: 
   jokeId: 5
-  jokeQuestion: I only know 25 letters of the alphabet.
+  jokeQuestion: I only know twenty five letters of the alphabet.
   jokePunchline: I don't know why.
