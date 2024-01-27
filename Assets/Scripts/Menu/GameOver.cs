@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,14 +31,13 @@ public class GameOver : MonoBehaviour
     private void Awake()
     {
         anim = GetComponent<Animator>();
+        EventHandler.PlayerDeath += StartAnim;
     }
 
     void Start()
     {
         isMenuActive = false;
         anim.enabled = false;
-        
-        StartAnim();
     }
 
     public void UpdateScoreDisplay(int scoreDisplay)
@@ -48,6 +48,8 @@ public class GameOver : MonoBehaviour
     // Animate the player falling into the trapdoor before showing the game-over menu
     public void StartAnim()
     {
+        UpdateScoreDisplay(PlayerData.instance.currentScore);
+
         PlayerAnimator.SetTrigger("Death");
         TrapdoorAnimator.SetTrigger("Death");
 
