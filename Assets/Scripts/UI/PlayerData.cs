@@ -15,6 +15,7 @@ public class PlayerData : MonoBehaviour
     public int currentScore = 0;
     public int highScore;
     [SerializeField] private Sprite[] playerSprites;
+    [SerializeField] private SpriteRenderer playerRenderer;
 
     private void Awake()
     {
@@ -58,9 +59,15 @@ public class PlayerData : MonoBehaviour
         else if (currentHealth <= 0)
         {
             currentHealth = 0;
-            Debug.Log("Dead!!");
+            EventHandler.OnDeath();
         }
         healthBar.setHealth();
+        UpdateSprite();
+    }
+
+    public void UpdateSprite() 
+    {
+        playerRenderer.sprite = playerSprites[currentHealth / 2 + 1];
     }
 
     public void ChangeScore(float multiplier)
