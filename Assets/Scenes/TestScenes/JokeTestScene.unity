@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 13038291}
   - component: {fileID: 13038290}
   - component: {fileID: 13038289}
+  - component: {fileID: 13038293}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -230,8 +231,8 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 25
+  m_VertexColorAlwaysGammaSpace: 1
+  m_AdditionalShaderChannelsFlag: 1
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -248,8 +249,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1490308365}
   - {fileID: 1241677173}
+  - {fileID: 234466943}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -257,6 +258,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &13038293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13038288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4edf2966b9ae2ff49980c6829c169e79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &44434895
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,14 +537,13 @@ GameObject:
   m_Component:
   - component: {fileID: 234466943}
   - component: {fileID: 234466945}
-  - component: {fileID: 234466944}
   m_Layer: 5
   m_Name: JokePrompt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &234466943
 RectTransform:
   m_ObjectHideFlags: 0
@@ -552,36 +564,6 @@ RectTransform:
   m_AnchoredPosition: {x: 213, y: 297}
   m_SizeDelta: {x: 773.9976, y: 85.5055}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &234466944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 234466942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.7264151, g: 0.40204102, b: 0.40204102, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &234466945
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -682,6 +664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubble: {fileID: 5839056252939399744, guid: 099363adf0de9b54284033d2088148b3, type: 3}
+  poppedBubble: {fileID: 5839056252939399744, guid: 6f3357a53e30836488fa491cdb43ae2b, type: 3}
   audiencePositions:
   - {fileID: 854026152}
   - {fileID: 405532832}
@@ -690,6 +673,7 @@ MonoBehaviour:
   - {fileID: 774933200}
   - {fileID: 151134891}
   - {fileID: 546285405}
+  poppedBubbleTarget: {fileID: 1334072659}
   fakeJokes: 
   floatingSpeed: 1
   maxheight: 8
@@ -704,11 +688,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703286404}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1334072659}
   - {fileID: 854026152}
   - {fileID: 405532832}
   - {fileID: 2397508}
@@ -1028,10 +1013,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9c7c54829b3d534491d83ad89ea7df2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fullJoke: Why did the chicken cross the road? To get to the other side!
+  fullJoke: {fileID: 0}
+  currentLineOfJoke: 
   blankAmount: 3
+  jokeCoolDown: 2.3
   textmeshPro: {fileID: 130846402}
   bubbleManager: {fileID: 703286405}
+  jokeManager: {fileID: 1514213076}
+--- !u!1 &1334072658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1334072659}
+  m_Layer: 5
+  m_Name: ScribeWorldSpace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1334072659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334072658}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.02, y: 3.84, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 703286406}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1490308364
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,6 +1199,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490308364}
   m_CullTransparentMesh: 1
+--- !u!1 &1514213075
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1514213077}
+  - component: {fileID: 1514213076}
+  m_Layer: 0
+  m_Name: JokeController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1514213076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514213075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 953f52b0985a9704ead26133083f2253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1514213077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514213075}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 746.8567, y: 705.60065, z: -2.4023004}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1573678305
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,6 +1457,7 @@ SceneRoots:
   - {fileID: 44434898}
   - {fileID: 13038292}
   - {fileID: 1903636368}
-  - {fileID: 703286406}
   - {fileID: 884110588}
   - {fileID: 2013935046}
+  - {fileID: 1514213077}
+  - {fileID: 703286406}

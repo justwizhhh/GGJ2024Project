@@ -12,6 +12,7 @@ public class EventHandler : MonoBehaviour
     public static event Action<string> WordTyped;
     public static event Action<char> LetterTyped;
 
+    public static event Action FullJokeTold;
     public static event Action AnswerCorrect;
     public static event Action AnswerWrong;
     public static event Action TypeWrong;
@@ -80,6 +81,15 @@ public class EventHandler : MonoBehaviour
     public static void OnCorrectAnswer()
     {
         AnswerCorrect?.Invoke();
+    }
+
+
+    /// <summary>
+    /// Messages all subscirbers when the player fully tells the joke
+    /// </summary>
+    public static void OnFullJoke()
+    {
+        FullJokeTold?.Invoke();
     }
 
     /// <summary>

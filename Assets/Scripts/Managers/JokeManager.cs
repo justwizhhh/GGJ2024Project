@@ -19,18 +19,6 @@ public class JokeManager : MonoBehaviour
         ShuffleListOfAllJokes();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void ShuffleListOfAllJokes()
     {
         while(listOfAllJokes.Count > 0)
