@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.Android.Types;
-using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 
 public class ScribeManager : MonoBehaviour

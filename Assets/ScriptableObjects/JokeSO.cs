@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewJoke", menuName = "Interaction/NewJokeObject")]
+[CreateAssetMenu(fileName = "NewJoke", menuName = "Scriptable Objects/NewJokeObject")]
 public class JokeSO : ScriptableObject
 {
     public int jokeId;
