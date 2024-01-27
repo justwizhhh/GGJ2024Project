@@ -50,7 +50,8 @@ public class JokePrompt : MonoBehaviour
                 }
                 else
                 {
-                    if (key == "Space" && CurrentJoke[typePoint].ToString() == " ")
+                    EventHandler.OnLetterTyped(letter);
+                    if (char.ToLower(letter) == CurrentJoke[typePoint] || letter == CurrentJoke[typePoint])
                     {
                         typePoint++;
                         typeProgress += " ";

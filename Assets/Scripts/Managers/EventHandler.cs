@@ -9,12 +9,35 @@ public class EventHandler : MonoBehaviour
     public static event Action<int> ChangeRowdiness;
     public static event Action<int> ChangeScore;
 
+    public static event Action<string> WordTyped;
     public static event Action<char> LetterTyped;
 
     public static event Action AnswerCorrect;
     public static event Action AnswerWrong;
+    public static event Action TypeWrong;
     public static event Action LoadJoke;
 
+
+
+
+    /// <summary>
+    /// Messages all subscirbers when a word is typed WRONG
+    /// </summary>
+    /// <param name="amount"></param>
+    public static void OnTypeWrong()
+    {
+        TypeWrong?.Invoke();
+    }
+
+
+    /// <summary>
+    /// Messages all subscirbers when a full word has been typed in
+    /// </summary>
+    /// <param name="amount"></param>
+    public static void OnTypeWord(string word)
+    {
+        WordTyped?.Invoke(word);
+    }
 
     /// <summary>
     /// Messages all subscirbers about the change in the player's health value
