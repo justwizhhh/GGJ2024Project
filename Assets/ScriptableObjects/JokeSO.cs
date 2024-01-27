@@ -6,6 +6,6 @@ using UnityEngine;
 public class JokeSO : ScriptableObject
 {
     public int jokeId;
-    public string jokeName;
-    public string jokeText;
+    public string jokeQuestion;
+    public string jokePunchline;
 }

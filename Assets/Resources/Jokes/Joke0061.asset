@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 536b3c35359aefc45bee136dd7cafc88, type: 3}
-  m_Name: Joke0047
+  m_Name: Joke0061
   m_EditorClassIdentifier: 
-  jokeId: 46
-  jokeQuestion: Why do ducks have feathers on their tails?
-  jokePunchline: To cover their butt quacks.
+  jokeId: 60
+  jokeQuestion: What did the cheese say to itself in the mirror?
+  jokePunchline: Halloumi!

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536b3c35359aefc45bee136dd7cafc88, type: 3}
   m_Name: Joke0059
   m_EditorClassIdentifier: 
-  jokeId: 40
+  jokeId: 58
   jokeQuestion: What do sprinters eat before a race?
   jokePunchline: Nothing, they fast.

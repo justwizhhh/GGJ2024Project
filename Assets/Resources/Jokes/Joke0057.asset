@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536b3c35359aefc45bee136dd7cafc88, type: 3}
   m_Name: Joke0057
   m_EditorClassIdentifier: 
-  jokeId: 40
+  jokeId: 56
   jokeQuestion: Why did the tree go to the dentist?
   jokePunchline: It needed a root canal.

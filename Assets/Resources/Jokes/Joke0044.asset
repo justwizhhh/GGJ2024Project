@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536b3c35359aefc45bee136dd7cafc88, type: 3}
   m_Name: Joke0044
   m_EditorClassIdentifier: 
-  jokeId: 40
+  jokeId: 43
   jokeQuestion: What did one stranger say to the other?
   jokePunchline: Nothing, they didn't know each other.

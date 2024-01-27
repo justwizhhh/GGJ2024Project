@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 536b3c35359aefc45bee136dd7cafc88, type: 3}
   m_Name: Joke0056
   m_EditorClassIdentifier: 
-  jokeId: 40
+  jokeId: 55
   jokeQuestion: I tried to write a song about a tortilla.
   jokePunchline: It ended up turning into more of a rap.
