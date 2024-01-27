@@ -84,7 +84,18 @@ public class ThrowableManager : MonoBehaviour
 
         if (spawnLocation.childCount == 0)
         {
-            GameObject throwablePrefab = DetermineThrowablePrefab();
+
+            GameObject throwablePrefab;
+            if (DetermineThrowablePrefab())
+            {
+                throwablePrefab = throwablePrefabPositive;
+            }
+            else 
+            {
+                throwablePrefab = throwablePrefabNegative;
+                //throwablePrefab.GetComponent<NegativeThrowable>().damage = 300;
+            }
+            
 
             GameObject throwable = Instantiate(throwablePrefab, spawnLocation.position, Quaternion.identity);
             ThrowableObject throwableObject = throwable.GetComponent<ThrowableObject>();
@@ -100,7 +111,7 @@ public class ThrowableManager : MonoBehaviour
         }
     }
 
-    GameObject DetermineThrowablePrefab()
+    bool DetermineThrowablePrefab()
     {
         float approvalRating = audienceApproval.slider.value;
         float positiveEffect = audienceApproval.GetPositiveEffect(approvalRating);
@@ -108,11 +119,11 @@ public class ThrowableManager : MonoBehaviour
 
         if (positiveEffect >= negativeEffect)
         {
-            return throwablePrefabPositive;
+            return true;
         }
         else
         {
-            return throwablePrefabNegative;
+            return false;
         }
     }
 
