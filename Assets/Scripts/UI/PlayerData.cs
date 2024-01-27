@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -30,23 +31,6 @@ public class PlayerData : MonoBehaviour
         scoreBoard.setScore(currentScore, highScore);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            ChangeHealth(-15); // damage by 15
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            ChangeHealth(15); // damage by 15
-        }
-        if (Input.GetKeyDown(KeyCode.Period))
-        {
-            ChangeScore(1); // score up with multiplier
-        }
-    }
-
     void ChangeHealth(int changeValue)
     {
         currentHealth += changeValue;
@@ -57,10 +41,18 @@ public class PlayerData : MonoBehaviour
         else if (currentHealth <= 0)
         {
             currentHealth = 0;
+            Debug.Log("YOU are dead. Not big suprise");
             EventHandler.OnDeath();
         }
         //healthBar.setHealth();
         UpdateSprite();
+    }
+
+
+    [ContextMenu("Take Damage")]
+    void TakeTestDamage() 
+    {
+        ChangeHealth(-1);
     }
 
     public void UpdateSprite() 
