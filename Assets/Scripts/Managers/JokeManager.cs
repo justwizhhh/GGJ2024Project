@@ -2,11 +2,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Linq;
+using FMODUnity;
 
 public class JokeManager : MonoBehaviour
 {
     [SerializeField]private TMP_Text jokeText;
     [SerializeField]private TMP_Text punchlineText;
+    [SerializeField] private EventReference TestSound;
 
     private List<JokeSO> listOfAllJokes = new();
     private Queue<JokeSO> queueOfJokes = new();
@@ -29,6 +31,7 @@ public class JokeManager : MonoBehaviour
         // TEST CODE... TO BE REMOVED
         if(Input.GetKeyUp(KeyCode.N) && currentJoke != null)
         {
+            EventHandler.OnPlayOneShotAudio(TestSound);
             currentJoke = GetNextJoke();
         }
     }

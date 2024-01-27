@@ -69,11 +69,5 @@ public class LevelManager : MonoBehaviour
         {
             Application.Quit();
         }
-
-        // Debug
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            Debug.Log(AudioManager.instance.MusicSource.volume);
-        }
     }
 }
