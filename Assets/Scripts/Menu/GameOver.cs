@@ -12,6 +12,12 @@ public class GameOver : MonoBehaviour
      */
 
     public bool isMenuActive;
+
+    [Space(10)]
+    public Animator PlayerAnimator;
+    public Animator TrapdoorAnimator;
+
+    [Space(10)]
     public Text RetryButton;
     public Text BackToTitleButton;
     public Text ScoreDisplayText;
@@ -29,7 +35,9 @@ public class GameOver : MonoBehaviour
     void Start()
     {
         isMenuActive = false;
-        //anim.enabled = false;
+        anim.enabled = false;
+        
+        StartAnim();
     }
 
     public void UpdateScoreDisplay(int scoreDisplay)
@@ -37,8 +45,12 @@ public class GameOver : MonoBehaviour
         ScoreDisplayText.text = "Score: " + scoreDisplay;
     }
 
+    // Animate the player falling into the trapdoor before showing the game-over menu
     public void StartAnim()
     {
+        PlayerAnimator.SetTrigger("Death");
+        TrapdoorAnimator.SetTrigger("Death");
+
         anim.enabled = true;
         anim.SetTrigger("Start");
     }
