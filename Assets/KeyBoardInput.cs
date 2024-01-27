@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Windows;
 
 public class KeyBoardInput : MonoBehaviour
 {
 
     Event input = Event.KeyboardEvent("Enter");
+
+    public LevelManager levelManager;
 
     private void OnGUI()
     {
@@ -18,7 +21,7 @@ public class KeyBoardInput : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (input != null)
+        if (input != null && (levelManager.IsPaused == false))
         {
             if (input.isKey)
             {
