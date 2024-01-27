@@ -117,7 +117,7 @@ public class JokeManager : MonoBehaviour
         jokeText.SetText(joke.jokeQuestion);
         punchlineText.SetText(joke.jokePunchline);
 
-        EventHandler.OnLoadJoke();
+        //EventHandler.OnLoadJoke();
         return joke;
     }
 }

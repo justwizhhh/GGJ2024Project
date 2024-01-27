@@ -37,7 +37,7 @@ public class ScribeManager : MonoBehaviour
 
     void GenerateJoke() 
     {
-        NewJoke(jokeManager.GetNewJokesFromQueue());
+        NewJoke(jokeManager.GetNextJoke());
     }
 
     void NewJoke(JokeSO joke) 
@@ -45,6 +45,7 @@ public class ScribeManager : MonoBehaviour
         fullJoke = joke;
         currentLineOfJoke = fullJoke.jokeQuestion;
         GenerateBlanks();
+        
 
 
         UpdateTMPRO();
@@ -161,7 +162,7 @@ public class ScribeManager : MonoBehaviour
         {
             //Punchline Finished
             lastOfJoke = false;
-            NewJoke(jokeManager.GetNewJokesFromQueue());
+            GenerateJoke();
         }
     }
 

@@ -63,15 +63,4 @@ public class ThrowableObject : MonoBehaviour
             }
         }
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-            Debug.Log("ThrowableObject touched player and destroyed.");
-        }
-    }
-
-
 }
