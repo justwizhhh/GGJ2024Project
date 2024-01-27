@@ -14,6 +14,9 @@ public class ThrowableObject : MonoBehaviour
     private float startTime;
     private bool isThrown = false;
 
+  
+
+
     void Awake()
     {
         startPosition = transform.position;
