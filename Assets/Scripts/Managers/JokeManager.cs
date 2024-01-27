@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -6,29 +5,33 @@ using System.Linq;
 
 public class JokeManager : MonoBehaviour
 {
-    private TMP_Text jokeText;
-    private List<JokeSO> listOfAllJokes;
-    private Queue<JokeSO> queueOfJokes;
+    [SerializeField]private TMP_Text jokeText;
+    [SerializeField]private TMP_Text punchlineText;
+
+    private List<JokeSO> listOfAllJokes = new();
+    private Queue<JokeSO> queueOfJokes = new();
+
+    private JokeSO currentJoke = null;
 
     private void Awake()
     {
-        jokeText = GetComponent<TMP_Text>();
         queueOfJokes = new();
 
         listOfAllJokes = LoadJokeObjects();
         ShuffleListOfAllJokes();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        currentJoke = GetNextJoke();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyUp(KeyCode.N) && currentJoke != null)
+        {
+            currentJoke = GetNextJoke();
+        }
     }
 
     private void ShuffleListOfAllJokes()
@@ -46,25 +49,44 @@ public class JokeManager : MonoBehaviour
         return Resources.LoadAll<JokeSO>("Jokes").ToList();
     }
 
-    public JokeSO GetNewJokesFromQueue()
+    private JokeSO GetNewJokesFromQueue()
     {
         return queueOfJokes.Dequeue();
     }
 
-    public string[] GetJokeAsSplitText()
+    public string[] GetQuestionAsArray()
     {
-        return jokeText.text.Split();
+        return currentJoke.jokeQuestion.Split();
     }
 
-    public string GetJokeAsString()
+    public string GetQuestionAsString()
     {
-        return jokeText.text;
+        return currentJoke.jokeQuestion;
+    }
+    public string[] GetPunchlineAsArray()
+    {
+        return currentJoke.jokePunchline.Split();
     }
 
-    public bool LoadNextJoke()
+    public string GetPunchlineAsString()
     {
-        // Logic to load the next joke
+        return currentJoke.jokePunchline;
+    }
+
+    public JokeSO GetNextJoke()
+    {
+        if (queueOfJokes.Count < 1)
+        {
+            jokeText.SetText("No more jokes for you...");
+            punchlineText.SetText("No more punchlines either...");
+            return null;
+        }
+
+        JokeSO joke = GetNewJokesFromQueue();
+        jokeText.SetText(joke.jokeQuestion);
+        punchlineText.SetText(joke.jokePunchline);
+
         EventHandler.OnLoadJoke();
-        return false;
+        return joke;
     }
 }
