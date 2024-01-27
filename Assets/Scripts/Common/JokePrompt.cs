@@ -8,11 +8,13 @@ public class JokePrompt : MonoBehaviour
     public string CurrentJoke;
 
     private List<SpawnedBubble> bubbleList;
+    private List<string> nounList;
     private string typeProgress;
     private int typePoint;
 
     Event input;
     TMP_Text tmptext;
+    TMP_FontAsset tmpfont;
     BubbleManager bm;
 
     private void Awake()
@@ -24,8 +26,7 @@ public class JokePrompt : MonoBehaviour
 
     private void Start()
     {
-        tmptext.text = CurrentJoke;
-        bubbleList = bm.bubbleList;
+        NewJoke(CurrentJoke);
     }
 
     private void OnGUI()
@@ -58,11 +59,31 @@ public class JokePrompt : MonoBehaviour
                     }
                 }
 
+
                 if (typeProgress == CurrentJoke)
                 {
                     Debug.Log("Well done okay");
                 }
             }
         }
+    }
+
+    public void NewJoke(string joke)
+    {
+        tmptext.text = CurrentJoke;
+
+        bubbleList = bm.bubbleList;
+        foreach (SpawnedBubble bubble in bubbleList)
+        {
+            nounList.Add(bubble.TMPRO.text);
+        }
+
+        typePoint = 0;
+        typeProgress = "";
+    }
+
+    public Vector2 GetSentencePosition()
+    {
+        return tmptext.transform.position;
     }
 }
