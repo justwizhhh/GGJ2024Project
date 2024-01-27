@@ -17,6 +17,8 @@ public class PlayerData : MonoBehaviour
     [SerializeField] private Sprite[] playerSprites;
     [SerializeField] private SpriteRenderer playerRenderer;
 
+    private bool newHighScore = false;
+
     private void Awake()
     {
         instance = this;
@@ -71,6 +73,11 @@ public class PlayerData : MonoBehaviour
         {
             highScore = currentScore;
             PlayerPrefs.SetInt("HighScore", currentScore);
+
+            if (!newHighScore) 
+            {
+                EventHandler.OnBeatScore();
+            }
         }
         scoreBoard.setScore(currentScore, highScore);
     }

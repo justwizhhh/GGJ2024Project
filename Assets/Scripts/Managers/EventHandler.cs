@@ -12,6 +12,7 @@ public class EventHandler : MonoBehaviour
     public static event Action<string> WordTyped;
     public static event Action<char> LetterTyped;
 
+    public static event Action BeatHighScore;
     public static event Action FullJokeTold;
     public static event Action AnswerCorrect;
     public static event Action AnswerWrong;
@@ -40,6 +41,14 @@ public class EventHandler : MonoBehaviour
         WordTyped?.Invoke(word);
     }
 
+    /// <summary>
+    /// Messages all subscirbers when a full word has been typed in
+    /// </summary>
+    /// <param name="amount"></param>
+    public static void OnBeatScore()
+    {
+        BeatHighScore?.Invoke();
+    }
 
 
     /// <summary>

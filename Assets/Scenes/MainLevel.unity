@@ -1029,7 +1029,7 @@ MonoBehaviour:
   - {fileID: 1529196432}
   poppedBubbleTarget: {fileID: 88423889}
   fakeJokes: 
-  floatingSpeed: 1
+  floatingSpeed: 2.8
   maxheight: 8
   minheight: -7
   debugLog: 0
