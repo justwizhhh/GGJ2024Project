@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        if (StartMusic != null) { AudioManager.instance.PlayMusic(StartMusic, 1); }
+        //if (StartMusic != null) { AudioManager.instance.PlayMusic(StartMusic, 1); }
     }
 
     // Transition into a new scene

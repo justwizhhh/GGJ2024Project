@@ -2,16 +2,22 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.PlasticSCM.Editor.WebApi;
+using UnityEditor.UIElements;
 using UnityEngine;
 
 public class BubbleManager : MonoBehaviour
 {
     [SerializeField] private GameObject bubble;
+    [SerializeField] private GameObject poppedBubble;
     [SerializeField] private Transform[] audiencePositions;
+    [SerializeField] private Transform poppedBubbleTarget;
+
     [SerializeField] private string fakeJokes;
     [SerializeField] private float floatingSpeed = 1;
     [SerializeField] private float maxheight;
     [SerializeField] private float minheight;
+
+    [SerializeField] private bool debugLog = false;
 
 
     [HideInInspector] public List<SpawnedBubble> bubbleRoyale = new List<SpawnedBubble>();
@@ -53,6 +59,8 @@ public class BubbleManager : MonoBehaviour
         }
     }
 
+
+
     void OnType(char input) 
     {
         SpawnedBubble[] bubbleRound = bubbleRoyale.ToArray();
@@ -61,9 +69,10 @@ public class BubbleManager : MonoBehaviour
             if (aliveBubble.text.Length - 2 < characterNum && aliveBubble.text.ToUpper()[characterNum] == input) // Check if the final character of a bubble
             {
                 //Picked option
-                Debug.Log($"Picked Text Bubble: {aliveBubble.text}, {aliveBubble.gameObject.name}");
+                if (debugLog) Debug.Log($"Picked Text Bubble: {aliveBubble.text}, {aliveBubble.gameObject.name}");
                 EventHandler.OnTypeWord(aliveBubble.text);
                 ResetSelection();
+                FinishWord(aliveBubble);
                 return;
             }
 
@@ -83,7 +92,7 @@ public class BubbleManager : MonoBehaviour
         {
             // No more options left 
             // PUNISH THE PLAYER and reset.
-            Debug.Log("TYPING FAILURE! PUNISH!");
+            if (debugLog) Debug.Log("TYPING FAILURE! PUNISH!");
             EventHandler.OnTypeWrong();
             ResetSelection();
         }
@@ -129,6 +138,17 @@ public class BubbleManager : MonoBehaviour
     void TestSpawn() 
     {
         StartJoke("Why did the chicken cross the road?");
+    }
+
+    void FinishWord(SpawnedBubble finishedBubble)
+    {
+        bubbleList.Remove(finishedBubble);
+
+        BubbleAnimator whatsPopping = GameObject.Instantiate(poppedBubble, finishedBubble.transform.position, finishedBubble.transform.rotation).GetComponent<BubbleAnimator>();
+        whatsPopping.Target = poppedBubbleTarget;
+        whatsPopping.text.text = finishedBubble.text;
+
+        Destroy(finishedBubble.gameObject);
     }
 
 
