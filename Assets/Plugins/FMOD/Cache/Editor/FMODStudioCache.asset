@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8935563983459509172
+--- !u!114 &-8985933094835013211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,24 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player/Piece_selection
+  m_Name: event:/Crowd/Discouraging/Crickets
   m_EditorClassIdentifier: 
-  Path: event:/Player/Piece_selection
+  Path: event:/Crowd/Discouraging/Crickets
   Guid:
-    Data1: 1274838868
-    Data2: 1225684104
-    Data3: 1965169568
-    Data4: -1070201228
+    Data1: -2002557175
+    Data2: 1093235931
+    Data3: 1011296643
+    Data4: 226744012
   Banks:
-  - {fileID: 1973684831948304570}
+  - {fileID: 357621268147489624}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: -4977600211967315128}
   MinDistance: 1
   MaxDistance: 20
-  Length: 10
---- !u!114 &-4370942858786586185
+  Length: 5918
+--- !u!114 &-8913178483298814813
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37,24 +38,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player/Move_denied
+  m_Name: event:/Crowd/Encouraging/Woohooo
   m_EditorClassIdentifier: 
-  Path: event:/Player/Move_denied
+  Path: event:/Crowd/Encouraging/Woohooo
   Guid:
-    Data1: -1316865336
-    Data2: 1226905336
-    Data3: -1049785431
-    Data4: 1671508894
+    Data1: -1083075447
+    Data2: 1339932618
+    Data3: -1156787037
+    Data4: -876630163
   Banks:
-  - {fileID: 1973684831948304570}
+  - {fileID: 404937821969259111}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
-  Parameters: []
+  Parameters:
+  - {fileID: 7977892616370878943}
   MinDistance: 1
   MaxDistance: 20
-  Length: 400
---- !u!114 &-85756641875484730
+  Length: 900
+--- !u!114 &-8776777311988355084
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,23 +66,860 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambiance
+  m_Name: event:/Music
   m_EditorClassIdentifier: 
-  Path: event:/Ambiance
+  Path: event:/Music
   Guid:
-    Data1: 1106853807
-    Data2: 1104687107
-    Data3: 251972252
-    Data4: 1703551015
+    Data1: 209136399
+    Data2: 1314455104
+    Data3: 1223823772
+    Data4: 1429300913
   Banks:
-  - {fileID: 1973684831948304570}
+  - {fileID: 404937821969259111}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 72452
+  Length: 265801
+--- !u!114 &-8417603949232016320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Punchlines/Drums
+  m_EditorClassIdentifier: 
+  Path: event:/Punchlines/Drums
+  Guid:
+    Data1: -700349983
+    Data2: 1282062241
+    Data3: -768871552
+    Data4: -517131474
+  Banks:
+  - {fileID: 404937821969259111}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4093
+--- !u!114 &-8308819834303850989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PositivePhrase/Player Health
+  m_EditorClassIdentifier: 
+  Name: Player Health
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 99.0099
+  ID:
+    data1: 1211087124
+    data2: 823541473
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-8212997903773551178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Atmos
+  m_EditorClassIdentifier: 
+  Path: event:/Atmos
+  Guid:
+    Data1: -378250515
+    Data2: 1151782763
+    Data3: 1086662557
+    Data4: -1572399026
+  Banks:
+  - {fileID: 357621268147489624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 217683
+--- !u!114 &-8041672853024082175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Crowd/Encouraging/PositivePhrase
+  m_EditorClassIdentifier: 
+  Path: event:/Crowd/Encouraging/PositivePhrase
+  Guid:
+    Data1: -1160346449
+    Data2: 1134688742
+    Data3: 777370519
+    Data4: -362649453
+  Banks:
+  - {fileID: 404937821969259111}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -6612882724151612579}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-7813248478741245757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Whispering/Player Health
+  m_EditorClassIdentifier: 
+  Name: Player Health
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 99.0099
+  ID:
+    data1: 1211087124
+    data2: 823541473
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-7711883136192009006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Clapping/Player Health
+  m_EditorClassIdentifier: 
+  Name: Player Health
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 99.0099
+  ID:
+    data1: 1211087124
+    data2: 823541473
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-7413753374059543919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Agression/Tomato
+  m_EditorClassIdentifier: 
+  Path: event:/Agression/Tomato
+  Guid:
+    Data1: 1254213729
+    Data2: 1312004900
+    Data3: -164207720
+    Data4: -701416949
+  Banks:
+  - {fileID: 357621268147489624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 666
+--- !u!114 &-7151662465146937217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Throw/Player Health
+  m_EditorClassIdentifier: 
+  Name: Player Health
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 99.0099
+  ID:
+    data1: 1211087124
+    data2: 823541473
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-7145892432277108017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Agression/Throw
+  m_EditorClassIdentifier: 
+  Path: event:/Agression/Throw
+  Guid:
+    Data1: 316797766
+    Data2: 1171486729
+    Data3: 789501851
+    Data4: 1737907784
+  Banks:
+  - {fileID: 357621268147489624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 4620330911079100438}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
+--- !u!114 &-6612882724151612579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/PositivePhrase/Player Health
+  m_EditorClassIdentifier: 
+  Name: Player Health
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 99.0099
+  ID:
+    data1: 1211087124
+    data2: 823541473
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-6018472903271352826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Crowd/Discouraging/Whispering
+  m_EditorClassIdentifier: 
+  Path: event:/Crowd/Discouraging/Whispering
+  Guid:
+    Data1: 56253542
+    Data2: 1149472481
+    Data3: -418950257
+    Data4: -609914239
+  Banks:
+  - {fileID: 404937821969259111}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 6836362475392984554}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-5951428647571662609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Crowd/Encouraging/Clapping
+  m_EditorClassIdentifier: 
+  Path: event:/Crowd/Encouraging/Clapping
+  Guid:
+    Data1: 1823204791
+    Data2: 1212993363
+    Data3: -1733080129
+    Data4: -273129579
+  Banks:
+  - {fileID: 404937821969259111}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -7711883136192009006}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-5713610172277163653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Player Health
+  m_EditorClassIdentifier: 
+  Name: Player Health
+  StudioPath: parameter:/Player Health
+  Min: 0
+  Max: 100
+  Default: 99.0099
+  ID:
+    data1: 1211087124
+    data2: 823541473
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-5070531552644617430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UserInput/RightAnswer
+  m_EditorClassIdentifier: 
+  Path: event:/UserInput/RightAnswer
+  Guid:
+    Data1: 768998541
+    Data2: 1341231253
+    Data3: -1841209153
+    Data4: -964996623
+  Banks:
+  - {fileID: 404937821969259111}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2972
+--- !u!114 &-4977600211967315128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Crickets/Player Health
+  m_EditorClassIdentifier: 
+  Name: Player Health
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 99.0099
+  ID:
+    data1: 1211087124
+    data2: 823541473
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-4957090853663684438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Punchlines/Confetti
+  m_EditorClassIdentifier: 
+  Path: event:/Punchlines/Confetti
+  Guid:
+    Data1: 1697037833
+    Data2: 1097786167
+    Data3: -1339691358
+    Data4: 86346252
+  Banks:
+  - {fileID: 404937821969259111}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 860
+--- !u!114 &-4758983688792880381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Trap/trapOpening
+  m_EditorClassIdentifier: 
+  Path: event:/Trap/trapOpening
+  Guid:
+    Data1: 287845378
+    Data2: 1319255030
+    Data3: -1911579996
+    Data4: -1480354543
+  Banks:
+  - {fileID: 357621268147489624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 631
+--- !u!114 &-4596355637674201470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Crowd/Discouraging/NegativePhrases
+  m_EditorClassIdentifier: 
+  Path: event:/Crowd/Discouraging/NegativePhrases
+  Guid:
+    Data1: 469893238
+    Data2: 1175695005
+    Data3: -1699424105
+    Data4: 1310930233
+  Banks:
+  - {fileID: 404937821969259111}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 5161651582385920341}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
+--- !u!114 &-4558507506338599500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Crowd/Encouraging/Clapping
+  m_EditorClassIdentifier: 
+  Path: event:/Crowd/Encouraging/Clapping
+  Guid:
+    Data1: 1823204791
+    Data2: 1212993363
+    Data3: -1733080129
+    Data4: -273129579
+  Banks:
+  - {fileID: 357621268147489624}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 2200097147819537631}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-4407359439487655019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Booing/Player Health
+  m_EditorClassIdentifier: 
+  Name: Player Health
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 99.0099
+  ID:
+    data1: 1211087124
+    data2: 823541473
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-4164877621032686040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/udio/FMOD/Build/Desktop/._Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FMOD/Build/Desktop/._Master.bank
+  Name: udio/FMOD/Build/Desktop/._Master
+  StudioPath: 
+  lastModified: 638420383104500000
+  FileSizes:
+  - Name: Desktop
+    Value: 4096
+  Exists: 1
+--- !u!114 &-4126519465654003783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Trap/trapOpening
+  m_EditorClassIdentifier: 
+  Path: event:/Trap/trapOpening
+  Guid:
+    Data1: 287845378
+    Data2: 1319255030
+    Data3: -1911579996
+    Data4: -1480354543
+  Banks:
+  - {fileID: 404937821969259111}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 631
+--- !u!114 &-3863365832719203643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Agression/Jar
+  m_EditorClassIdentifier: 
+  Path: event:/Agression/Jar
+  Guid:
+    Data1: -592130457
+    Data2: 1184923746
+    Data3: -567223375
+    Data4: -759364977
+  Banks:
+  - {fileID: 357621268147489624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3812374219859991219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Crowd/Discouraging/Booing
+  m_EditorClassIdentifier: 
+  Path: event:/Crowd/Discouraging/Booing
+  Guid:
+    Data1: -874912193
+    Data2: 1113960127
+    Data3: 1941022359
+    Data4: 224948935
+  Banks:
+  - {fileID: 357621268147489624}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -1110101481872336159}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-3438615323016451288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Score/HighScore
+  m_EditorClassIdentifier: 
+  Path: event:/Score/HighScore
+  Guid:
+    Data1: 481259340
+    Data2: 1301823815
+    Data3: -2115664480
+    Data4: 2138530654
+  Banks:
+  - {fileID: 404937821969259111}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5500
+--- !u!114 &-3272559773042627636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Trap/deathWarning
+  m_EditorClassIdentifier: 
+  Path: event:/Trap/deathWarning
+  Guid:
+    Data1: 992007602
+    Data2: 1289954008
+    Data3: -1795638860
+    Data4: -2004603270
+  Banks:
+  - {fileID: 357621268147489624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 883
+--- !u!114 &-3004678829779388920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Crowd/Encouraging/PositivePhrase
+  m_EditorClassIdentifier: 
+  Path: event:/Crowd/Encouraging/PositivePhrase
+  Guid:
+    Data1: -1160346449
+    Data2: 1134688742
+    Data3: 777370519
+    Data4: -362649453
+  Banks:
+  - {fileID: 357621268147489624}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -8308819834303850989}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-2223362912445282782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Crowd/Discouraging/Whispering
+  m_EditorClassIdentifier: 
+  Path: event:/Crowd/Discouraging/Whispering
+  Guid:
+    Data1: 56253542
+    Data2: 1149472481
+    Data3: -418950257
+    Data4: -609914239
+  Banks:
+  - {fileID: 357621268147489624}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -7813248478741245757}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-2025565331272195911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Crickets/Player Health
+  m_EditorClassIdentifier: 
+  Name: Player Health
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 99.0099
+  ID:
+    data1: 1211087124
+    data2: 823541473
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-1204834696675564461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Crowd/Discouraging/Booing
+  m_EditorClassIdentifier: 
+  Path: event:/Crowd/Discouraging/Booing
+  Guid:
+    Data1: -874912193
+    Data2: 1113960127
+    Data3: 1941022359
+    Data4: 224948935
+  Banks:
+  - {fileID: 404937821969259111}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -4407359439487655019}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-1110101481872336159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Booing/Player Health
+  m_EditorClassIdentifier: 
+  Name: Player Health
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 99.0099
+  ID:
+    data1: 1211087124
+    data2: 823541473
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &-1007603801974861062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music
+  Guid:
+    Data1: 209136399
+    Data2: 1314455104
+    Data3: 1223823772
+    Data4: 1429300913
+  Banks:
+  - {fileID: 357621268147489624}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 265801
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,29 +933,40 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 6731571765399767708}
-  - {fileID: 1973684831948304570}
+  - {fileID: 5277065750287768396}
+  - {fileID: 404937821969259111}
   EditorEvents:
-  - {fileID: 4335537748624950537}
-  - {fileID: 968934451378142321}
-  - {fileID: -8935563983459509172}
-  - {fileID: 4823262694844045388}
-  - {fileID: 8329122558015129902}
-  - {fileID: 4857553647659767757}
-  - {fileID: 7810193736206674532}
-  - {fileID: -85756641875484730}
-  - {fileID: -4370942858786586185}
-  - {fileID: 3800476465288040158}
-  - {fileID: 5065962217866212681}
-  - {fileID: 6035433579083816740}
-  EditorParameters: []
+  - {fileID: -4126519465654003783}
+  - {fileID: 6472085705834515460}
+  - {fileID: -4957090853663684438}
+  - {fileID: -8776777311988355084}
+  - {fileID: 826320209745280141}
+  - {fileID: -1204834696675564461}
+  - {fileID: 4074457995483672953}
+  - {fileID: -3438615323016451288}
+  - {fileID: 2648541848341710851}
+  - {fileID: -6018472903271352826}
+  - {fileID: 8216750193506678798}
+  - {fileID: -4596355637674201470}
+  - {fileID: -8913178483298814813}
+  - {fileID: -5070531552644617430}
+  - {fileID: 8159992391080448682}
+  - {fileID: -8041672853024082175}
+  - {fileID: 8920827993615346531}
+  - {fileID: -5951428647571662609}
+  - {fileID: 7444451129068620769}
+  - {fileID: -8417603949232016320}
+  - {fileID: 9011915710710235576}
+  - {fileID: 7283241156463944743}
+  EditorParameters:
+  - {fileID: 6337361032275532164}
   MasterBanks:
-  - {fileID: 1973684831948304570}
+  - {fileID: 404937821969259111}
   StringsBanks:
-  - {fileID: 6731571765399767708}
-  cacheTime: 638419646805747242
+  - {fileID: 5277065750287768396}
+  cacheTime: 638420410042718009
   cacheVersion: 131616
---- !u!114 &968934451378142321
+--- !u!114 &357621268147489624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,25 +975,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Victory_music
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/udio/FMOD/Build/Desktop/Master.bank
   m_EditorClassIdentifier: 
-  Path: event:/Music/Victory_music
-  Guid:
-    Data1: 1758931225
-    Data2: 1113727236
-    Data3: -525225299
-    Data4: 2100840248
-  Banks:
-  - {fileID: 1973684831948304570}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3863
---- !u!114 &1973684831948304570
+  Path: Assets/Audio/FMOD/Build/Desktop/Master.bank
+  Name: udio/FMOD/Build/Desktop/Master
+  StudioPath: bank:/Master
+  lastModified: 638420401580938405
+  FileSizes:
+  - Name: Desktop
+    Value: 19961344
+  Exists: 1
+--- !u!114 &404937821969259111
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,15 +998,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: ../Roots_FMOD/Build/Desktop/Master.bank
+  Path: ../../../../Desktop/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638419646805737198
+  lastModified: 638420410042696595
   FileSizes:
   - Name: Desktop
-    Value: 2280192
+    Value: 19961344
   Exists: 1
---- !u!114 &3800476465288040158
+--- !u!114 &746705087066639778
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -173,24 +1016,52 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/Return_to_Menu
+  m_Name: event:/Crowd/Encouraging/Laughing
   m_EditorClassIdentifier: 
-  Path: event:/UI/Return_to_Menu
+  Path: event:/Crowd/Encouraging/Laughing
   Guid:
-    Data1: 523070170
-    Data2: 1110891266
-    Data3: -457356097
-    Data4: 909906192
+    Data1: -1876722775
+    Data2: 1108298085
+    Data3: -535200353
+    Data4: 1514598706
   Banks:
-  - {fileID: 1973684831948304570}
+  - {fileID: 357621268147489624}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 4240541320832201952}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
+--- !u!114 &826320209745280141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MouseInteraction
+  m_EditorClassIdentifier: 
+  Path: event:/MouseInteraction
+  Guid:
+    Data1: -1525415149
+    Data2: 1128034624
+    Data3: 526716085
+    Data4: -2095577052
+  Banks:
+  - {fileID: 404937821969259111}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
---- !u!114 &4335537748624950537
+  Length: 258
+--- !u!114 &2200097147819537631
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,133 +1070,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player/Move_approved
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Clapping/Player Health
   m_EditorClassIdentifier: 
-  Path: event:/Player/Move_approved
-  Guid:
-    Data1: 1196644887
-    Data2: 1221209468
-    Data3: 767518865
-    Data4: 1610882186
-  Banks:
-  - {fileID: 1973684831948304570}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 28
---- !u!114 &4823262694844045388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/Start_button
-  m_EditorClassIdentifier: 
-  Path: event:/UI/Start_button
-  Guid:
-    Data1: -1569488525
-    Data2: 1328207646
-    Data3: -1847568505
-    Data4: -361034618
-  Banks:
-  - {fileID: 1973684831948304570}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 200
---- !u!114 &4857553647659767757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Main_music
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Main_music
-  Guid:
-    Data1: -477876834
-    Data2: 1269791149
-    Data3: 2096403349
-    Data4: -172995480
-  Banks:
-  - {fileID: 1973684831948304570}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 58867
---- !u!114 &5065962217866212681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Start_music
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Start_music
-  Guid:
-    Data1: -1061593122
-    Data2: 1273465964
-    Data3: 348403375
-    Data4: 2085890119
-  Banks:
-  - {fileID: 1973684831948304570}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2540
---- !u!114 &6035433579083816740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player/Move
-  m_EditorClassIdentifier: 
-  Path: event:/Player/Move
-  Guid:
-    Data1: -1905313542
-    Data2: 1283109704
-    Data3: -638554222
-    Data4: -542525719
-  Banks:
-  - {fileID: 1973684831948304570}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 50
---- !u!114 &6731571765399767708
+  Name: Player Health
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 99.0099
+  ID:
+    data1: 1211087124
+    data2: 823541473
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &2601126078527579808
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -337,15 +1097,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: ../Roots_FMOD/Build/Desktop/Master.strings.bank
+  Path: Assets/Audio/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638419646805747242
+  lastModified: 638420401580958495
   FileSizes:
   - Name: Desktop
-    Value: 1624
+    Value: 2054
   Exists: 1
---- !u!114 &7810193736206674532
+--- !u!114 &2648541848341710851
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -355,47 +1115,720 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Resource_found
+  m_Name: event:/Agression/Tomato
   m_EditorClassIdentifier: 
-  Path: event:/Resource_found
+  Path: event:/Agression/Tomato
   Guid:
-    Data1: 696178592
-    Data2: 1108783664
-    Data3: -1262087235
-    Data4: 483459325
+    Data1: 1254213729
+    Data2: 1312004900
+    Data3: -164207720
+    Data4: -701416949
   Banks:
-  - {fileID: 1973684831948304570}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 29500
---- !u!114 &8329122558015129902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/Volume_controls
-  m_EditorClassIdentifier: 
-  Path: event:/UI/Volume_controls
-  Guid:
-    Data1: -1982694019
-    Data2: 1317720861
-    Data3: -1765239904
-    Data4: -542071971
-  Banks:
-  - {fileID: 1973684831948304570}
+  - {fileID: 404937821969259111}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
+  Length: 666
+--- !u!114 &3273106020909160785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Punchlines/Drums
+  m_EditorClassIdentifier: 
+  Path: event:/Punchlines/Drums
+  Guid:
+    Data1: -700349983
+    Data2: 1282062241
+    Data3: -768871552
+    Data4: -517131474
+  Banks:
+  - {fileID: 357621268147489624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4093
+--- !u!114 &3338983374975447751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Crowd/Discouraging/NegativePhrases
+  m_EditorClassIdentifier: 
+  Path: event:/Crowd/Discouraging/NegativePhrases
+  Guid:
+    Data1: 469893238
+    Data2: 1175695005
+    Data3: -1699424105
+    Data4: 1310930233
+  Banks:
+  - {fileID: 357621268147489624}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 8647770577985130606}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
+--- !u!114 &4074457995483672953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Agression/Throw
+  m_EditorClassIdentifier: 
+  Path: event:/Agression/Throw
+  Guid:
+    Data1: 316797766
+    Data2: 1171486729
+    Data3: 789501851
+    Data4: 1737907784
+  Banks:
+  - {fileID: 404937821969259111}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -7151662465146937217}
+  MinDistance: 1
+  MaxDistance: 20
   Length: 500
+--- !u!114 &4218643719341989384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Punchlines/Confetti
+  m_EditorClassIdentifier: 
+  Path: event:/Punchlines/Confetti
+  Guid:
+    Data1: 1697037833
+    Data2: 1097786167
+    Data3: -1339691358
+    Data4: 86346252
+  Banks:
+  - {fileID: 357621268147489624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 860
+--- !u!114 &4240541320832201952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Laughing/Player Health
+  m_EditorClassIdentifier: 
+  Name: Player Health
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 99.0099
+  ID:
+    data1: 1211087124
+    data2: 823541473
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &4410944784270431438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Laughing/Player Health
+  m_EditorClassIdentifier: 
+  Name: Player Health
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 99.0099
+  ID:
+    data1: 1211087124
+    data2: 823541473
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &4620330911079100438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Throw/Player Health
+  m_EditorClassIdentifier: 
+  Name: Player Health
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 99.0099
+  ID:
+    data1: 1211087124
+    data2: 823541473
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &5161651582385920341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/NegativePhrases/Player Health
+  m_EditorClassIdentifier: 
+  Name: Player Health
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 99.0099
+  ID:
+    data1: 1211087124
+    data2: 823541473
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &5240480591086434798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Agression/Metal
+  m_EditorClassIdentifier: 
+  Path: event:/Agression/Metal
+  Guid:
+    Data1: -2080862212
+    Data2: 1170118660
+    Data3: -1184829263
+    Data4: 1365964938
+  Banks:
+  - {fileID: 357621268147489624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &5277065750287768396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../../Desktop/FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638420410042718009
+  FileSizes:
+  - Name: Desktop
+    Value: 2054
+  Exists: 1
+--- !u!114 &6153466471391168283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Woohooo/Player Health
+  m_EditorClassIdentifier: 
+  Name: Player Health
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 99.0099
+  ID:
+    data1: 1211087124
+    data2: 823541473
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &6334440848292052662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MouseInteraction
+  m_EditorClassIdentifier: 
+  Path: event:/MouseInteraction
+  Guid:
+    Data1: -1525415149
+    Data2: 1128034624
+    Data3: 526716085
+    Data4: -2095577052
+  Banks:
+  - {fileID: 357621268147489624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 258
+--- !u!114 &6337361032275532164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Player Health
+  m_EditorClassIdentifier: 
+  Name: Player Health
+  StudioPath: parameter:/Player Health
+  Min: 0
+  Max: 100
+  Default: 99.0099
+  ID:
+    data1: 1211087124
+    data2: 823541473
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &6472085705834515460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Crowd/Discouraging/Crickets
+  m_EditorClassIdentifier: 
+  Path: event:/Crowd/Discouraging/Crickets
+  Guid:
+    Data1: -2002557175
+    Data2: 1093235931
+    Data3: 1011296643
+    Data4: 226744012
+  Banks:
+  - {fileID: 404937821969259111}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -2025565331272195911}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5918
+--- !u!114 &6824775612227334851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Score/HighScore
+  m_EditorClassIdentifier: 
+  Path: event:/Score/HighScore
+  Guid:
+    Data1: 481259340
+    Data2: 1301823815
+    Data3: -2115664480
+    Data4: 2138530654
+  Banks:
+  - {fileID: 357621268147489624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5500
+--- !u!114 &6836362475392984554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Whispering/Player Health
+  m_EditorClassIdentifier: 
+  Name: Player Health
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 99.0099
+  ID:
+    data1: 1211087124
+    data2: 823541473
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &7283241156463944743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Agression/Metal
+  m_EditorClassIdentifier: 
+  Path: event:/Agression/Metal
+  Guid:
+    Data1: -2080862212
+    Data2: 1170118660
+    Data3: -1184829263
+    Data4: 1365964938
+  Banks:
+  - {fileID: 404937821969259111}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &7444451129068620769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UserInput/WrongAnswer
+  m_EditorClassIdentifier: 
+  Path: event:/UserInput/WrongAnswer
+  Guid:
+    Data1: -1207879485
+    Data2: 1159158996
+    Data3: 1225289916
+    Data4: 1339724248
+  Banks:
+  - {fileID: 404937821969259111}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4458
+--- !u!114 &7470913865889855152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UserInput/RightAnswer
+  m_EditorClassIdentifier: 
+  Path: event:/UserInput/RightAnswer
+  Guid:
+    Data1: 768998541
+    Data2: 1341231253
+    Data3: -1841209153
+    Data4: -964996623
+  Banks:
+  - {fileID: 357621268147489624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2972
+--- !u!114 &7662549946661321633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UserInput/WrongAnswer
+  m_EditorClassIdentifier: 
+  Path: event:/UserInput/WrongAnswer
+  Guid:
+    Data1: -1207879485
+    Data2: 1159158996
+    Data3: 1225289916
+    Data4: 1339724248
+  Banks:
+  - {fileID: 357621268147489624}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4458
+--- !u!114 &7977892616370878943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Woohooo/Player Health
+  m_EditorClassIdentifier: 
+  Name: Player Health
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 99.0099
+  ID:
+    data1: 1211087124
+    data2: 823541473
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &8159992391080448682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Crowd/Encouraging/Laughing
+  m_EditorClassIdentifier: 
+  Path: event:/Crowd/Encouraging/Laughing
+  Guid:
+    Data1: -1876722775
+    Data2: 1108298085
+    Data3: -535200353
+    Data4: 1514598706
+  Banks:
+  - {fileID: 404937821969259111}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 4410944784270431438}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
+--- !u!114 &8216750193506678798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Agression/Jar
+  m_EditorClassIdentifier: 
+  Path: event:/Agression/Jar
+  Guid:
+    Data1: -592130457
+    Data2: 1184923746
+    Data3: -567223375
+    Data4: -759364977
+  Banks:
+  - {fileID: 404937821969259111}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8493821675389564205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Crowd/Encouraging/Woohooo
+  m_EditorClassIdentifier: 
+  Path: event:/Crowd/Encouraging/Woohooo
+  Guid:
+    Data1: -1083075447
+    Data2: 1339932618
+    Data3: -1156787037
+    Data4: -876630163
+  Banks:
+  - {fileID: 357621268147489624}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 6153466471391168283}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 900
+--- !u!114 &8647770577985130606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/NegativePhrases/Player Health
+  m_EditorClassIdentifier: 
+  Name: Player Health
+  StudioPath: 
+  Min: 0
+  Max: 100
+  Default: 99.0099
+  ID:
+    data1: 1211087124
+    data2: 823541473
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &8920827993615346531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Trap/deathWarning
+  m_EditorClassIdentifier: 
+  Path: event:/Trap/deathWarning
+  Guid:
+    Data1: 992007602
+    Data2: 1289954008
+    Data3: -1795638860
+    Data4: -2004603270
+  Banks:
+  - {fileID: 404937821969259111}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 883
+--- !u!114 &9011915710710235576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Atmos
+  m_EditorClassIdentifier: 
+  Path: event:/Atmos
+  Guid:
+    Data1: -378250515
+    Data2: 1151782763
+    Data3: 1086662557
+    Data4: -1572399026
+  Banks:
+  - {fileID: 404937821969259111}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 217683

@@ -32,6 +32,14 @@ public class AudioManager : MonoBehaviour
         StartPlayingMusic(MusicType.GAME_MUSIC);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+             PlayOneShot(FMODLib.instance.clapping);
+        }
+    }
+
     /// <summary>
     /// Plays a one-shot audio effect
     /// </summary>
@@ -48,29 +56,12 @@ public class AudioManager : MonoBehaviour
     /// <param name="allowFadeOut"></param>
     public void StartPlayingMusic(MusicType musicType, bool allowFadeOut = true)
     {
-        musicEventInstance.getPlaybackState(out var result);
-        if (result == PLAYBACK_STATE.PLAYING)
-        {
-            StopPlayingMusic(allowFadeOut);
-        }
-
-        switch (musicType)
-        {
-            case MusicType.MAIN_MENU:
-                musicEventInstance = CreateEventInstance(FMODLib.instance.menuMusic);
-                break;
-            case MusicType.GAME_MUSIC:
-                musicEventInstance = CreateEventInstance(FMODLib.instance.gameMusic);
-                break;
-            case MusicType.GAME_OVER:
-                musicEventInstance = CreateEventInstance(FMODLib.instance.endOfGameMusic);
-                break;
-            case MusicType.CREDITS:
-                musicEventInstance = CreateEventInstance(FMODLib.instance.creditsMusic);
-                break;
-            default:
-                break;
-        }
+        //musicEventInstance.getPlaybackState(out var result);
+        //if (result == PLAYBACK_STATE.PLAYING)
+        //{
+        //    StopPlayingMusic(allowFadeOut);
+        //}            
+        musicEventInstance = CreateEventInstance(FMODLib.instance.music);           
         
         musicEventInstance.start();
     }

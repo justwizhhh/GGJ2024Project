@@ -588,41 +588,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acfc9174b4ac6e7438d073fdc018e20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <menuMusic>k__BackingField:
+  <music>k__BackingField:
     Guid:
-      Data1: -1061593122
-      Data2: 1273465964
-      Data3: 348403375
-      Data4: 2085890119
-    Path: event:/Music/Start_music
-  <gameMusic>k__BackingField:
-    Guid:
-      Data1: -477876834
-      Data2: 1269791149
-      Data3: 2096403349
-      Data4: -172995480
-    Path: event:/Music/Main_music
-  <endOfGameMusic>k__BackingField:
-    Guid:
-      Data1: 1758931225
-      Data2: 1113727236
-      Data3: -525225299
-      Data4: 2100840248
-    Path: event:/Music/Victory_music
-  <creditsMusic>k__BackingField:
-    Guid:
-      Data1: 1758931225
-      Data2: 1113727236
-      Data3: -525225299
-      Data4: 2100840248
-    Path: event:/Music/Victory_music
+      Data1: 209136399
+      Data2: 1314455104
+      Data3: 1223823772
+      Data4: 1429300913
+    Path: event:/Music
   <testOneShot>k__BackingField:
     Guid:
-      Data1: 1196644887
-      Data2: 1221209468
-      Data3: 767518865
-      Data4: 1610882186
-    Path: event:/Player/Move_approved
+      Data1: -700349983
+      Data2: 1282062241
+      Data3: -768871552
+      Data4: -517131474
+    Path: event:/Punchlines/Drums
 --- !u!1 &792771095
 GameObject:
   m_ObjectHideFlags: 0
