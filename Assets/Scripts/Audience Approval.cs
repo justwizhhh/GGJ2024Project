@@ -10,6 +10,7 @@ public class AudienceApproval : MonoBehaviour
     public Slider slider;
     public AnimationCurve positiveEffectCurve;
     public AnimationCurve negativeEffectCurve;
+    public PlayerData playerData;
     public HealthBar healthUI;
     public float minInterval;
     public float maxInterval;
@@ -30,6 +31,7 @@ public class AudienceApproval : MonoBehaviour
         if (basicTimer > tickTimer) 
         {
             AddApproval(-1);
+            tickTimer = playerData.difficulty;
             basicTimer = 0;
         }
         basicTimer += Time.deltaTime;
