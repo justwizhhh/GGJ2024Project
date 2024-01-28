@@ -8,14 +8,19 @@ public class FMODLib : MonoBehaviour
     [field: Space(5)]
     [field: Header("Music/Looping")]
     [field: SerializeField] public EventReference music { get; private set; }
+    [field: SerializeField] public EventReference introMusic { get; private set; }
+    [field: SerializeField] public EventReference outroMusic { get; private set; }
     [field: SerializeField] public EventReference atmos { get; private set; }
 
     [field: Space(5)]
-    [field: Header("Aggression")]
+    [field: Header("Throwables")]
     [field: SerializeField] public EventReference jar { get; private set; }
     [field: SerializeField] public EventReference metal { get; private set; }
-    [field: SerializeField] public EventReference throwObject { get; private set; }
     [field: SerializeField] public EventReference tomato { get; private set; }
+    [field: SerializeField] public EventReference coins { get; private set; }
+    [field: SerializeField] public EventReference diamond { get; private set; }
+    [field: SerializeField] public EventReference roses { get; private set; }
+    [field: SerializeField] public EventReference throwObject { get; private set; }
 
     [field: Space(5)]
     [field: Header("Crowd - Discourage")]
@@ -32,6 +37,12 @@ public class FMODLib : MonoBehaviour
     [field: SerializeField] public EventReference woohoo { get; private set; }
 
     [field: Space(5)]
+    [field: Header("Menu")]
+    [field: SerializeField] public EventReference choice { get; private set; }
+    [field: SerializeField] public EventReference scrolling { get; private set; }
+    [field: SerializeField] public EventReference select { get; private set; }
+
+    [field: Space(5)]
     [field: Header("Punchlines")]
     [field: SerializeField] public EventReference confetti { get; private set; }
     [field: SerializeField] public EventReference drums { get; private set; }
@@ -43,7 +54,7 @@ public class FMODLib : MonoBehaviour
     [field: Space(5)]
     [field: Header("Trap")]
     [field: SerializeField] public EventReference deathWarning { get; private set; }
-    [field: SerializeField] public EventReference trapOpening { get; private set; }
+    [field: SerializeField] public EventReference death { get; private set; }
 
     [field: Space(5)]
     [field: Header("User Input")]

@@ -40,5 +40,13 @@ namespace Enumerations
         PURSE = 1,
         DIAMOND = 2
     }
+
+    public enum GameState
+    {
+        INTRO = 0,
+        PLAYING = 1,
+        END = 2,
+        CREDITS = 3
+    }
 }
 

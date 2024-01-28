@@ -63,7 +63,21 @@ MonoBehaviour:
       Data2: 1314455104
       Data3: 1223823772
       Data4: 1429300913
-    Path: event:/Music
+    Path: event:/Music/Music
+  <introMusic>k__BackingField:
+    Guid:
+      Data1: 1422369872
+      Data2: 1224439347
+      Data3: 76662439
+      Data4: 535703184
+    Path: event:/Music/IntroMusic
+  <outroMusic>k__BackingField:
+    Guid:
+      Data1: -902812749
+      Data2: 1169393954
+      Data3: 1563172246
+      Data4: 387575540
+    Path: event:/Music/OutroMusic
   <atmos>k__BackingField:
     Guid:
       Data1: -378250515
@@ -77,28 +91,49 @@ MonoBehaviour:
       Data2: 1184923746
       Data3: -567223375
       Data4: -759364977
-    Path: event:/Agression/Jar
+    Path: event:/Bad/Jar
   <metal>k__BackingField:
     Guid:
       Data1: -2080862212
       Data2: 1170118660
       Data3: -1184829263
       Data4: 1365964938
-    Path: event:/Agression/Metal
-  <throwObject>k__BackingField:
-    Guid:
-      Data1: 316797766
-      Data2: 1171486729
-      Data3: 789501851
-      Data4: 1737907784
-    Path: event:/Agression/Throw
+    Path: event:/Bad/Metal
   <tomato>k__BackingField:
     Guid:
       Data1: 1254213729
       Data2: 1312004900
       Data3: -164207720
       Data4: -701416949
-    Path: event:/Agression/Tomato
+    Path: event:/Bad/Tomato
+  <coins>k__BackingField:
+    Guid:
+      Data1: -728226147
+      Data2: 1310261297
+      Data3: 402850217
+      Data4: 318311944
+    Path: event:/Throwables/Good/Coins
+  <diamond>k__BackingField:
+    Guid:
+      Data1: 1614525933
+      Data2: 1085052297
+      Data3: 1969065604
+      Data4: -629101806
+    Path: event:/Throwables/Good/Diamond
+  <roses>k__BackingField:
+    Guid:
+      Data1: 270824267
+      Data2: 1264695618
+      Data3: -531114339
+      Data4: -1000490262
+    Path: event:/Throwables/Good/Roses
+  <throwObject>k__BackingField:
+    Guid:
+      Data1: 316797766
+      Data2: 1171486729
+      Data3: 789501851
+      Data4: 1737907784
+    Path: event:/Throwables/Throw
   <booing>k__BackingField:
     Guid:
       Data1: -874912193
@@ -155,6 +190,27 @@ MonoBehaviour:
       Data3: -1156787037
       Data4: -876630163
     Path: event:/Crowd/Encouraging/Woohooo
+  <choice>k__BackingField:
+    Guid:
+      Data1: -1189040691
+      Data2: 1208882608
+      Data3: 1702552751
+      Data4: 1153158610
+    Path: event:/Menu/Choice
+  <scrolling>k__BackingField:
+    Guid:
+      Data1: -626749757
+      Data2: 1168654656
+      Data3: -1803632202
+      Data4: 531677525
+    Path: event:/Menu/Scrolling
+  <select>k__BackingField:
+    Guid:
+      Data1: 634084794
+      Data2: 1219945553
+      Data3: 901901952
+      Data4: -1130405179
+    Path: event:/Menu/Select
   <confetti>k__BackingField:
     Guid:
       Data1: 1697037833
@@ -183,13 +239,13 @@ MonoBehaviour:
       Data3: -1795638860
       Data4: -2004603270
     Path: event:/Trap/deathWarning
-  <trapOpening>k__BackingField:
+  <death>k__BackingField:
     Guid:
       Data1: 287845378
       Data2: 1319255030
       Data3: -1911579996
       Data4: -1480354543
-    Path: event:/Trap/trapOpening
+    Path: event:/Trap/Death
   <answerRight>k__BackingField:
     Guid:
       Data1: 768998541
