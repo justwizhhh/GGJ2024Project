@@ -4,4 +4,5 @@ using UnityEngine;
 public class NegativeThrowableSO : ThrowableSO
 {
     public Enumerations.HarmfulObjectType objectType;
+    public GameObject throwable;
 }

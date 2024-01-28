@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NegativeThrowable : MonoBehaviour
@@ -46,6 +47,7 @@ public class NegativeThrowable : MonoBehaviour
     {
         if (script != null)
         {
+            script.GetComponent<Collider2D>().enabled = false; // Should loop through all child colliders
             script.enabled = false;
         }
         else
