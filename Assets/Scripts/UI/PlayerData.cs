@@ -14,6 +14,7 @@ public class PlayerData : MonoBehaviour
     public ScoreBoard scoreBoard;
     public int currentScore = 0;
     public int highScore;
+    public float difficulty = 1.0f;
     [SerializeField] private Sprite[] playerSprites;
     [SerializeField] private SpriteRenderer playerRenderer;
 
@@ -64,7 +65,8 @@ public class PlayerData : MonoBehaviour
 
     public void ChangeScore(float multiplier)
     {
-        currentScore += (int)(UnityEngine.Random.Range(1.0f, 15.0f) * multiplier);
+        int addedScore = (int)(UnityEngine.Random.Range(1.0f, 15.0f) * multiplier);
+        currentScore += addedScore;
         if (currentScore >= 99999999)
         {
             currentScore = 99999999;
@@ -80,5 +82,7 @@ public class PlayerData : MonoBehaviour
             }
         }
         scoreBoard.setScore(currentScore, highScore);
+        difficulty -= Mathf.Sign(addedScore) * 0.025f;
+        difficulty = Mathf.Clamp(difficulty, 0.4f, 1);
     }
 }
