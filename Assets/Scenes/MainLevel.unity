@@ -156,6 +156,7 @@ Transform:
   - {fileID: 269278378}
   - {fileID: 337908514}
   - {fileID: 641362333}
+  - {fileID: 1119368751}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &32066610
@@ -1316,7 +1317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1324,14 +1325,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &519420029
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1398,6 +1391,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &555386999
 GameObject:
   m_ObjectHideFlags: 0
@@ -2058,7 +2064,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f8aa1750a4839447a4111b72c865460, type: 3}
+<<<<<<< Updated upstream
 --- !u!1 &1045427352
+=======
+<<<<<<< HEAD
+--- !u!1 &1045427352
+=======
+--- !u!1 &1119368750
+>>>>>>> main
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2066,20 +2080,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 1045427353}
   m_Layer: 0
   m_Name: ThrowingArm1
+=======
+<<<<<<< HEAD
+  - component: {fileID: 1045427353}
+  m_Layer: 0
+  m_Name: ThrowingArm1
+=======
+  - component: {fileID: 1119368751}
+  - component: {fileID: 1119368752}
+  - component: {fileID: 1119368753}
+  m_Layer: 0
+  m_Name: Audio Manager
+>>>>>>> main
+>>>>>>> Stashed changes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< Updated upstream
 --- !u!4 &1045427353
+=======
+<<<<<<< HEAD
+--- !u!4 &1045427353
+=======
+--- !u!4 &1119368751
+>>>>>>> main
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
   m_GameObject: {fileID: 1045427352}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -2090,6 +2130,58 @@ Transform:
   - {fileID: 1407968816}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
+=======
+=======
+  m_GameObject: {fileID: 1119368750}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 23776773}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1119368752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119368750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acfc9174b4ac6e7438d073fdc018e20e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <music>k__BackingField:
+    Guid:
+      Data1: 209136399
+      Data2: 1314455104
+      Data3: 1223823772
+      Data4: 1429300913
+    Path: event:/Music
+  <testOneShot>k__BackingField:
+    Guid:
+      Data1: -700349983
+      Data2: 1282062241
+      Data3: -768871552
+      Data4: -517131474
+    Path: event:/Punchlines/Drums
+--- !u!114 &1119368753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119368750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ed77e83ff9c7224f8f3a8fd4139a997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> main
+>>>>>>> Stashed changes
 --- !u!1 &1122542370
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,10 +7,7 @@ public class FMODLib : MonoBehaviour
 
     [field: Space(5)]
     [field: Header("Music")]
-    [field: SerializeField] public EventReference menuMusic { get; private set; }
-    [field: SerializeField] public EventReference gameMusic { get; private set; }
-    [field: SerializeField] public EventReference endOfGameMusic { get; private set; }
-    [field: SerializeField] public EventReference creditsMusic { get; private set; }
+    [field: SerializeField] public EventReference music { get; private set; }
 
     [field: Space(5)]
     [field: Header("Effects")]
