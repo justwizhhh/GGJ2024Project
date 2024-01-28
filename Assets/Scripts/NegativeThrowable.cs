@@ -7,6 +7,7 @@ public class NegativeThrowable : MonoBehaviour
 {
     public MonoBehaviour scriptToDisable;
     [SerializeField] float clickRange = 4;
+    [SerializeField] int damamgeMod = 1;
 
     void Start()
     {
@@ -24,7 +25,7 @@ public class NegativeThrowable : MonoBehaviour
         {
             Destroy(gameObject);
             //Negative Action:
-            EventHandler.OnChangeHealth(-1);
+            EventHandler.OnChangeHealth(-damamgeMod);
 
 
             //Debug.Log("ThrowableObject touched player and destroyed.");

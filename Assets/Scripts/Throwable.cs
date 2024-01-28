@@ -9,12 +9,20 @@ public class ThrowableObject : MonoBehaviour
     public float arcHeight = 5f;
     public float throwSpeed = 5f;
     public float spinSpeed = 180f;
+    [SerializeField] private ParticleSystem splashParticle;
 
     private Vector3 startPosition;
     private float startTime;
     private bool isThrown = false;
 
-  
+
+    private void OnDestroy()
+    {
+        if (splashParticle != null)
+        {
+            GameObject.Instantiate(splashParticle, transform.position, transform.rotation);
+        }
+    }
 
 
     void Awake()

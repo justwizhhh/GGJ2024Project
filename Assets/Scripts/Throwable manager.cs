@@ -96,8 +96,10 @@ public class ThrowableManager : MonoBehaviour
         GameObject throwable = Instantiate(throwablePrefab, spawnLocation.position, Quaternion.identity);
         ThrowableObject throwableObject = throwable.GetComponent<ThrowableObject>();
 
-        if (throwableObject != null) throwableObject.target = player.transform;
-
+        if (throwableObject != null)
+        {
+            throwableObject.target = player.transform;
+        }
 
         // Animations
         int anim = UnityEngine.Random.Range(0, 2);

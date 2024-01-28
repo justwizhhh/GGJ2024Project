@@ -18,6 +18,9 @@ public class GameOver : MonoBehaviour
     public Animator PlayerAnimator;
     public Animator TrapdoorAnimator;
 
+    private BoxCollider2D playerCol;
+    private ThrowableManager throwableManager;
+
     [Space(10)]
     public Text RetryButton;
     public Text BackToTitleButton;
@@ -29,8 +32,7 @@ public class GameOver : MonoBehaviour
     Animator anim;
 
     private void Awake()
-    {
-        anim = GetComponent<Animator>();
+    {        anim = GetComponent<Animator>();
         EventHandler.PlayerDeath += StartAnim;
     }
 
@@ -49,6 +51,13 @@ public class GameOver : MonoBehaviour
     public void StartAnim()
     {
         UpdateScoreDisplay(PlayerData.instance.currentScore);
+
+
+        playerCol = PlayerAnimator.gameObject.GetComponent<BoxCollider2D>();
+        throwableManager = FindObjectOfType<ThrowableManager>();
+        playerCol.enabled = false;
+        throwableManager.enabled = false;
+        throwableManager.StopAllCoroutines();
 
         PlayerAnimator.SetTrigger("Death");
         TrapdoorAnimator.SetTrigger("Death");
