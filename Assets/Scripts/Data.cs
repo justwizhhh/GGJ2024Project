@@ -26,5 +26,19 @@ namespace Enumerations
         HARMFUL     = 1,
         BENEFICIAL  = 2
     }
+
+    public enum HarmfulObjectType
+    {
+        TOMATO = 0,
+        MUG_OF_ALE = 1,
+        DAGGER = 2
+    }
+
+    public enum BeneficialObjectType
+    {
+        ROSE = 0,
+        PURSE = 1,
+        DIAMOND = 2
+    }
 }
 

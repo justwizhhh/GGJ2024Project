@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 public class ThrowableManager : MonoBehaviour
 {
@@ -16,6 +18,9 @@ public class ThrowableManager : MonoBehaviour
     public float minIntervalModifier = 0.01f; // Adjusted modifier for closer to 0
     public float maxIntervalModifier = 0.2f;  // Adjusted modifier for closer to 100
 
+    private List<PositiveThrowableSO> listOfPositiveThrowables;
+    private List<NegativeThrowableSO> listOfNegativeThrowables;
+
 
     void Start()
     {
@@ -30,8 +35,16 @@ public class ThrowableManager : MonoBehaviour
             Debug.LogError("AudienceApproval reference is not set in ThrowableManager!");
         }
 
+        LoadThrowableAssets();
+
         InitializeThrowables(1);
         StartCoroutine(SpawnThrowablesRandomly());
+    }
+
+    private void LoadThrowableAssets()
+    {
+        listOfPositiveThrowables = Resources.LoadAll<PositiveThrowableSO>("Throwables/Beneficial").ToList();
+        listOfNegativeThrowables = Resources.LoadAll<NegativeThrowableSO>("Throwables/Harmful").ToList();
     }
 
     void InitializeThrowables(int numThrowables)
