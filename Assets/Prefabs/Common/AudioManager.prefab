@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5518410304398124084}
   - component: {fileID: 5294364863543555470}
+  - component: {fileID: 4339008412523372753}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -44,7 +45,169 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ed77e83ff9c7224f8f3a8fd4139a997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MusicClips: []
-  SoundClips: []
-  MusicSource: {fileID: 0}
-  SoundSources: []
+--- !u!114 &4339008412523372753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2382057007999410195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acfc9174b4ac6e7438d073fdc018e20e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <music>k__BackingField:
+    Guid:
+      Data1: 209136399
+      Data2: 1314455104
+      Data3: 1223823772
+      Data4: 1429300913
+    Path: event:/Music
+  <atmos>k__BackingField:
+    Guid:
+      Data1: -378250515
+      Data2: 1151782763
+      Data3: 1086662557
+      Data4: -1572399026
+    Path: event:/Atmos
+  <jar>k__BackingField:
+    Guid:
+      Data1: -592130457
+      Data2: 1184923746
+      Data3: -567223375
+      Data4: -759364977
+    Path: event:/Agression/Jar
+  <metal>k__BackingField:
+    Guid:
+      Data1: -2080862212
+      Data2: 1170118660
+      Data3: -1184829263
+      Data4: 1365964938
+    Path: event:/Agression/Metal
+  <throwObject>k__BackingField:
+    Guid:
+      Data1: 316797766
+      Data2: 1171486729
+      Data3: 789501851
+      Data4: 1737907784
+    Path: event:/Agression/Throw
+  <tomato>k__BackingField:
+    Guid:
+      Data1: 1254213729
+      Data2: 1312004900
+      Data3: -164207720
+      Data4: -701416949
+    Path: event:/Agression/Tomato
+  <booing>k__BackingField:
+    Guid:
+      Data1: -874912193
+      Data2: 1113960127
+      Data3: 1941022359
+      Data4: 224948935
+    Path: event:/Crowd/Discouraging/Booing
+  <crickets>k__BackingField:
+    Guid:
+      Data1: -2002557175
+      Data2: 1093235931
+      Data3: 1011296643
+      Data4: 226744012
+    Path: event:/Crowd/Discouraging/Crickets
+  <negativePhrase>k__BackingField:
+    Guid:
+      Data1: 469893238
+      Data2: 1175695005
+      Data3: -1699424105
+      Data4: 1310930233
+    Path: event:/Crowd/Discouraging/NegativePhrases
+  <whispering>k__BackingField:
+    Guid:
+      Data1: 56253542
+      Data2: 1149472481
+      Data3: -418950257
+      Data4: -609914239
+    Path: event:/Crowd/Discouraging/Whispering
+  <clapping>k__BackingField:
+    Guid:
+      Data1: 1823204791
+      Data2: 1212993363
+      Data3: -1733080129
+      Data4: -273129579
+    Path: event:/Crowd/Encouraging/Clapping
+  <laughing>k__BackingField:
+    Guid:
+      Data1: -1876722775
+      Data2: 1108298085
+      Data3: -535200353
+      Data4: 1514598706
+    Path: event:/Crowd/Encouraging/Laughing
+  <positivePhrase>k__BackingField:
+    Guid:
+      Data1: -1160346449
+      Data2: 1134688742
+      Data3: 777370519
+      Data4: -362649453
+    Path: event:/Crowd/Encouraging/PositivePhrase
+  <woohoo>k__BackingField:
+    Guid:
+      Data1: -1083075447
+      Data2: 1339932618
+      Data3: -1156787037
+      Data4: -876630163
+    Path: event:/Crowd/Encouraging/Woohooo
+  <confetti>k__BackingField:
+    Guid:
+      Data1: 1697037833
+      Data2: 1097786167
+      Data3: -1339691358
+      Data4: 86346252
+    Path: event:/Punchlines/Confetti
+  <drums>k__BackingField:
+    Guid:
+      Data1: -700349983
+      Data2: 1282062241
+      Data3: -768871552
+      Data4: -517131474
+    Path: event:/Punchlines/Drums
+  <highScore>k__BackingField:
+    Guid:
+      Data1: 481259340
+      Data2: 1301823815
+      Data3: -2115664480
+      Data4: 2138530654
+    Path: event:/Score/HighScore
+  <deathWarning>k__BackingField:
+    Guid:
+      Data1: 992007602
+      Data2: 1289954008
+      Data3: -1795638860
+      Data4: -2004603270
+    Path: event:/Trap/deathWarning
+  <trapOpening>k__BackingField:
+    Guid:
+      Data1: 287845378
+      Data2: 1319255030
+      Data3: -1911579996
+      Data4: -1480354543
+    Path: event:/Trap/trapOpening
+  <answerRight>k__BackingField:
+    Guid:
+      Data1: 768998541
+      Data2: 1341231253
+      Data3: -1841209153
+      Data4: -964996623
+    Path: event:/UserInput/RightAnswer
+  <answerWrong>k__BackingField:
+    Guid:
+      Data1: -1207879485
+      Data2: 1159158996
+      Data3: 1225289916
+      Data4: 1339724248
+    Path: event:/UserInput/WrongAnswer
+  <mouseInteracion>k__BackingField:
+    Guid:
+      Data1: -1525415149
+      Data2: 1128034624
+      Data3: 526716085
+      Data4: -2095577052
+    Path: event:/MouseInteraction
