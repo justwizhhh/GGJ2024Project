@@ -27,13 +27,23 @@ public class BubbleManager : MonoBehaviour
     private void Awake()
     {
         EventHandler.LetterTyped += OnType;
+        EventHandler.PlayerDeath += OnPlayerDeath;
     }
 
 
-    // Start is called before the first frame update
-    void Start()
+    void OnPlayerDeath() 
     {
-        
+        DeleteBubbles();
+
+        this.enabled = false;
+    }
+
+    void DeleteBubbles() 
+    {
+        foreach (SpawnedBubble bubbles in bubbleList) 
+        {
+            GameObject.Destroy(bubbles.gameObject);
+        }
     }
 
     // Update is called once per frame
@@ -155,12 +165,14 @@ public class BubbleManager : MonoBehaviour
     void SpawnWord(string word) 
     {
         Vector3 spawnPos = audiencePositions[UnityEngine.Random.Range(0, audiencePositions.Length - 1)].transform.position;
-        SpawnedBubble newBubble = GameObject.Instantiate(bubble, spawnPos, Quaternion.identity, this.transform).GetComponent<SpawnedBubble>();
+        Quaternion randomRotation = Quaternion.Euler(0,0,UnityEngine.Random.Range(0,360));
+        SpawnedBubble newBubble = GameObject.Instantiate(bubble, spawnPos, randomRotation, this.transform).GetComponent<SpawnedBubble>();
 
 
         //Intalise Bubble
         newBubble.TMPRO.text = word;
         newBubble.text = word;
+        newBubble.rigidBody.velocity = new Vector2(UnityEngine.Random.Range(-2.0f, 2.0f), UnityEngine.Random.Range(0.0f, 2.0f));
         newBubble.rigidBody.gravityScale = -0.03f * floatingSpeed;
 
         // Get width of the TMPRO

@@ -10,4 +10,8 @@ public class SpawnedBubble : MonoBehaviour
     public string text;
     public Rigidbody2D rigidBody;
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Call Audio Code
+    }
 }

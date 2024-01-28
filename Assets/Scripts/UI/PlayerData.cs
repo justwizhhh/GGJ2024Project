@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerData : MonoBehaviour
 {
@@ -9,10 +11,13 @@ public class PlayerData : MonoBehaviour
 
     public int maxHealth = 100;
     public int currentHealth;
-    public HealthBar healthBar;
     public ScoreBoard scoreBoard;
     public int currentScore = 0;
     public int highScore;
+    [SerializeField] private Sprite[] playerSprites;
+    [SerializeField] private SpriteRenderer playerRenderer;
+
+    private bool newHighScore = false;
 
     private void Awake()
     {
@@ -23,27 +28,9 @@ public class PlayerData : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        healthBar.setMaxHealth(maxHealth);
         EventHandler.ChangeHealth += ChangeHealth;
         highScore = PlayerPrefs.GetInt("HighScore", 0);
         scoreBoard.setScore(currentScore, highScore);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            ChangeHealth(-15); // damage by 15
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            ChangeHealth(15); // damage by 15
-        }
-        if (Input.GetKeyDown(KeyCode.Period))
-        {
-            ChangeScore(1); // score up with multiplier
-        }
     }
 
     void ChangeHealth(int changeValue)
@@ -56,9 +43,23 @@ public class PlayerData : MonoBehaviour
         else if (currentHealth <= 0)
         {
             currentHealth = 0;
-            Debug.Log("Dead!!");
+            Debug.Log("YOU are dead. Not big suprise");
+            EventHandler.OnDeath();
         }
-        healthBar.setHealth();
+        //healthBar.setHealth();
+        UpdateSprite();
+    }
+
+
+    [ContextMenu("Take Damage")]
+    void TakeTestDamage() 
+    {
+        ChangeHealth(-1);
+    }
+
+    public void UpdateSprite() 
+    {
+        playerRenderer.sprite = playerSprites[currentHealth / 2 + 1];
     }
 
     public void ChangeScore(float multiplier)
@@ -72,6 +73,11 @@ public class PlayerData : MonoBehaviour
         {
             highScore = currentScore;
             PlayerPrefs.SetInt("HighScore", currentScore);
+
+            if (!newHighScore) 
+            {
+                EventHandler.OnBeatScore();
+            }
         }
         scoreBoard.setScore(currentScore, highScore);
     }

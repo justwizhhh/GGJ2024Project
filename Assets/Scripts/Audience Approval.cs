@@ -30,7 +30,9 @@ public class AudienceApproval : MonoBehaviour
         if (basicTimer > tickTimer) 
         {
             AddApproval(-1);
+            basicTimer = 0;
         }
+        basicTimer += Time.deltaTime;
     }
 
     public void SetActiveThrowables(int count)

@@ -12,11 +12,13 @@ public class EventHandler : MonoBehaviour
     public static event Action<string> WordTyped;
     public static event Action<char> LetterTyped;
 
+    public static event Action BeatHighScore;
     public static event Action FullJokeTold;
     public static event Action AnswerCorrect;
     public static event Action AnswerWrong;
     public static event Action TypeWrong;
     public static event Action LoadJoke;
+    public static event Action PlayerDeath;
 
 
 
@@ -39,10 +41,38 @@ public class EventHandler : MonoBehaviour
         WordTyped?.Invoke(word);
     }
 
+    /// <summary>
+    /// Messages all subscirbers when a full word has been typed in
+    /// </summary>
+    /// <param name="amount"></param>
+    public static void OnBeatScore()
+    {
+        BeatHighScore?.Invoke();
+    }
+
+
+    /// <summary>
+    /// Messages all subscirbers On Click
+    /// </summary>
     public static void OnClick(Vector2 position)
     {
         Click?.Invoke(position);
     }
+
+
+
+
+
+    /// <summary>
+    /// Messages all Subs when the player dies.
+    /// </summary>
+    /// <param name="amount"></param>
+    public static void OnDeath()
+    {
+        PlayerDeath?.Invoke();
+    }
+
+
 
     /// <summary>
     /// Messages all subscirbers about the change in the player's health value
