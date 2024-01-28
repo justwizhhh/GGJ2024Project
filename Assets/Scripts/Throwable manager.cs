@@ -39,14 +39,15 @@ public class ThrowableManager : MonoBehaviour
 
         LoadThrowableAssets();
 
-        InitializeThrowables(1);
         StartCoroutine(SpawnThrowablesRandomly());
     }
 
     private void LoadThrowableAssets()
     {
         listOfPositiveThrowables = Resources.LoadAll<PositiveThrowableSO>("Throwables/Beneficial").ToList();
+        listOfPositiveThrowables = listOfPositiveThrowables.OrderBy(x => x.value).ToList();
         listOfNegativeThrowables = Resources.LoadAll<NegativeThrowableSO>("Throwables/Harmful").ToList();
+        listOfNegativeThrowables = listOfNegativeThrowables.OrderBy(x => x.value).ToList();
     }
 
     void InitializeThrowables(int numThrowables)
@@ -79,12 +80,8 @@ public class ThrowableManager : MonoBehaviour
         else 
         {
             //Negative
-            throwablePrefab = listOfNegativeThrowables[1 - Mathf.Clamp(audienceSelection, -3, -1)].throwable;
+            throwablePrefab = listOfNegativeThrowables[Mathf.Abs(Mathf.Clamp(audienceSelection, -3, -1) + 1)].throwable;
         }
-
-
-        throwablePrefab = DetermineThrowablePrefab() ? listOfPositiveThrowables[audienceSelection - 1].throwable : listOfNegativeThrowables[audienceSelection - 1].throwable;
-
 
 
         //throwablePrefab = DetermineThrowablePrefab()? throwablePrefabPositive:throwablePrefabNegative;            

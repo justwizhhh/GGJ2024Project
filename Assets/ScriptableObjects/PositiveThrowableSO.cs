@@ -4,5 +4,4 @@ using UnityEngine;
 public class PositiveThrowableSO : ThrowableSO
 {
     public Enumerations.BeneficialObjectType objectType;
-    public GameObject throwable;
 }

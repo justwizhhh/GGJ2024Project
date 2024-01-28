@@ -27,6 +27,7 @@ public class BubbleManager : MonoBehaviour
     private void Awake()
     {
         EventHandler.LetterTyped += OnType;
+        EventHandler.FullJokeTold += DeleteBubbles;
         EventHandler.PlayerDeath += OnPlayerDeath;
     }
 
@@ -44,6 +45,7 @@ public class BubbleManager : MonoBehaviour
         {
             GameObject.Destroy(bubbles.gameObject);
         }
+        bubbleList.Clear();
     }
 
     // Update is called once per frame
