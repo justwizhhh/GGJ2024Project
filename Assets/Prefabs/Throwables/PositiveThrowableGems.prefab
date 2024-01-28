@@ -163,6 +163,7 @@ MonoBehaviour:
   arcHeight: 6
   throwSpeed: 0.25
   spinSpeed: 270
+  splashParticle: {fileID: 0}
 --- !u!114 &-7383527235572612233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +179,13 @@ MonoBehaviour:
   clickMultipler: 4
   pointMultipler: 5
   clickRange: 0.62
+  <destroySound>k__BackingField:
+    Guid:
+      Data1: 1614525933
+      Data2: 1085052297
+      Data3: 1969065604
+      Data4: -629101806
+    Path: event:/Throwables/Good/Diamond
 --- !u!58 &2793367048002133599
 CircleCollider2D:
   m_ObjectHideFlags: 0

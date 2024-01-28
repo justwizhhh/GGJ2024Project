@@ -41,6 +41,10 @@ public class PlayerData : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
+        else if (currentHealth == 1)
+        {
+            AudioManager.instance.PlayOneShot(FMODLib.instance.deathWarning);
+        }
         else if (currentHealth <= 0)
         {
             currentHealth = 0;

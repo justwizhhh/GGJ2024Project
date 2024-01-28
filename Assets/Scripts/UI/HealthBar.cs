@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -18,8 +16,6 @@ public class HealthBar : MonoBehaviour
         fill.color = gradient.Evaluate(slider.normalizedValue);
         healthText.SetText(slider.value.ToString());
         FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Player Health", slider.normalizedValue * 100.0f);
-        FMODUnity.RuntimeManager.StudioSystem.getParameterByName("Player Health", out float result);
-        UnityEngine.Debug.Log("Parameter value " + result);
     }
 
     public void setMaxHealth(int health)

@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using FMOD;
+using FMODUnity;
 
 public class NegativeThrowable : MonoBehaviour
 {
     public MonoBehaviour scriptToDisable;
     [SerializeField] float clickRange = 4;
     [SerializeField] int damamgeMod = 1;
+    [field: SerializeField] public EventReference destroySound { get; private set; }
+
 
     void Start()
     {
@@ -16,6 +20,7 @@ public class NegativeThrowable : MonoBehaviour
 
     private void OnDestroy()
     {
+
         EventHandler.Click -= OnClick;
     }
 
@@ -23,6 +28,7 @@ public class NegativeThrowable : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            AudioManager.instance.PlayOneShot(destroySound);
             Destroy(gameObject);
             //Negative Action:
             EventHandler.OnChangeHealth(-damamgeMod);
@@ -56,7 +62,7 @@ public class NegativeThrowable : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Script is null! Cannot disable.");
+            UnityEngine.Debug.LogWarning("Script is null! Cannot disable.");
         }
     }
 }

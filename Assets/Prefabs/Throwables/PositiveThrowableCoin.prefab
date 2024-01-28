@@ -163,6 +163,7 @@ MonoBehaviour:
   arcHeight: 6
   throwSpeed: 0.25
   spinSpeed: 270
+  splashParticle: {fileID: 0}
 --- !u!114 &-7383527235572612233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,6 +179,13 @@ MonoBehaviour:
   clickMultipler: 4
   pointMultipler: 3
   clickRange: 0.62
+  <destroySound>k__BackingField:
+    Guid:
+      Data1: -728226147
+      Data2: 1310261297
+      Data3: 402850217
+      Data4: 318311944
+    Path: event:/Throwables/Good/Coins
 --- !u!58 &2793367048002133599
 CircleCollider2D:
   m_ObjectHideFlags: 0

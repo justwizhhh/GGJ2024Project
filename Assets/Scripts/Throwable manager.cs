@@ -82,19 +82,24 @@ public class ThrowableManager : MonoBehaviour
         if (DetermineThrowablePrefab())
         {
             //Pro
-            throwablePrefab = listOfPositiveThrowables[Mathf.Clamp(audienceSelection, 1, 3) - 1].throwable;
+            audienceSelection = Mathf.Clamp(audienceSelection, 1, 3) - 1;
+            throwablePrefab = listOfPositiveThrowables[audienceSelection].throwable;
         }
         else 
         {
             //Negative
-            throwablePrefab = listOfNegativeThrowables[Mathf.Abs(Mathf.Clamp(audienceSelection, -3, -1) + 1)].throwable;
+            audienceSelection = Mathf.Abs(Mathf.Clamp(audienceSelection, -3, -1) + 1);
+            throwablePrefab = listOfNegativeThrowables[audienceSelection].throwable;
         }
 
 
         //throwablePrefab = DetermineThrowablePrefab()? throwablePrefabPositive:throwablePrefabNegative;            
 
         GameObject throwable = Instantiate(throwablePrefab, spawnLocation.position, Quaternion.identity);
+
         ThrowableObject throwableObject = throwable.GetComponent<ThrowableObject>();
+
+        AudioManager.instance.PlayOneShot(FMODLib.instance.throwObject);
 
         if (throwableObject != null)
         {

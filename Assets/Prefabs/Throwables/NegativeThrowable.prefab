@@ -147,6 +147,13 @@ MonoBehaviour:
   scriptToDisable: {fileID: 1900442004080326558}
   clickRange: 4
   damamgeMod: 1
+  <destroySound>k__BackingField:
+    Guid:
+      Data1: 1254213729
+      Data2: 1312004900
+      Data3: -164207720
+      Data4: -701416949
+    Path: event:/Bad/Tomato
 --- !u!58 &5223814629209723680
 CircleCollider2D:
   m_ObjectHideFlags: 0

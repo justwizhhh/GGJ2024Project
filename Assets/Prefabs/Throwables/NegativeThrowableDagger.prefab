@@ -79,6 +79,7 @@ MonoBehaviour:
   arcHeight: 6
   throwSpeed: 0.25
   spinSpeed: 270
+  splashParticle: {fileID: 0}
 --- !u!114 &3605533698293598108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,6 +95,13 @@ MonoBehaviour:
   scriptToDisable: {fileID: 1900442004080326558}
   clickRange: 4
   damamgeMod: 2
+  <destroySound>k__BackingField:
+    Guid:
+      Data1: -1253489005
+      Data2: 1148610995
+      Data3: 1445218456
+      Data4: -1702861622
+    Path: event:/Bad/Weapon
 --- !u!58 &5223814629209723680
 CircleCollider2D:
   m_ObjectHideFlags: 0

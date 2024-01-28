@@ -125,6 +125,7 @@ public class EventHandler : MonoBehaviour
     /// </summary>
     public static void OnFullJoke()
     {
+        AudioManager.instance.PlayOneShot(FMODLib.instance.answerRight);
         FullJokeTold?.Invoke();
     }
 
@@ -133,6 +134,7 @@ public class EventHandler : MonoBehaviour
     /// </summary>
     public static void OnWrongAnswer()
     {
+        AudioManager.instance.PlayOneShot(FMODLib.instance.answerWrong);
         AnswerWrong?.Invoke();
     }
 

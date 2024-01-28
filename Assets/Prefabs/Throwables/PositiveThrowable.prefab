@@ -163,6 +163,7 @@ MonoBehaviour:
   arcHeight: 6
   throwSpeed: 0.25
   spinSpeed: 270
+  splashParticle: {fileID: 0}
 --- !u!114 &-7383527235572612233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,7 +177,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clickMultipler: 4
+  pointMultipler: 1
   clickRange: 0.62
+  <destroySound>k__BackingField:
+    Guid:
+      Data1: 270824267
+      Data2: 1264695618
+      Data3: -531114339
+      Data4: -1000490262
+    Path: event:/Throwables/Good/Roses
 --- !u!58 &2793367048002133599
 CircleCollider2D:
   m_ObjectHideFlags: 0
