@@ -23,6 +23,10 @@ public class ThrowableManager : MonoBehaviour
     private List<PositiveThrowableSO> listOfPositiveThrowables;
     private List<NegativeThrowableSO> listOfNegativeThrowables;
 
+    [Space(10)]
+    public Animator ThrowAnim1;
+    public Animator ThrowAnim2;
+
 
     void Start()
     {
@@ -41,6 +45,9 @@ public class ThrowableManager : MonoBehaviour
 
         InitializeThrowables(1);
         StartCoroutine(SpawnThrowablesRandomly());
+
+        ThrowAnim1.gameObject.SetActive(false);
+        ThrowAnim2.gameObject.SetActive(false);
     }
 
     private void LoadThrowableAssets()
@@ -82,17 +89,41 @@ public class ThrowableManager : MonoBehaviour
             throwablePrefab = listOfNegativeThrowables[1 - Mathf.Clamp(audienceSelection, -3, -1)].throwable;
         }
 
-
-        throwablePrefab = DetermineThrowablePrefab() ? listOfPositiveThrowables[audienceSelection - 1].throwable : listOfNegativeThrowables[audienceSelection - 1].throwable;
-
-
-
         //throwablePrefab = DetermineThrowablePrefab()? throwablePrefabPositive:throwablePrefabNegative;            
 
         GameObject throwable = Instantiate(throwablePrefab, spawnLocation.position, Quaternion.identity);
         ThrowableObject throwableObject = throwable.GetComponent<ThrowableObject>();
 
         if (throwableObject != null) throwableObject.target = player.transform;
+
+
+        // Animations
+        int anim = UnityEngine.Random.Range(0, 2);
+        if (anim == 0)
+        {
+            if (!ThrowAnim1.gameObject.activeSelf) { ThrowAnim1.gameObject.SetActive(true); }
+            StartCoroutine(AnimStop(ThrowAnim1));
+            ThrowAnim1.gameObject.transform.position = spawnLocation.position;
+        }
+        else
+        {
+            if (!ThrowAnim2.gameObject.activeSelf) { ThrowAnim2.gameObject.SetActive(true); }
+            StartCoroutine(AnimStop(ThrowAnim2));
+            ThrowAnim2.gameObject.transform.position = spawnLocation.position;
+        }
+    }
+
+
+    IEnumerator AnimStop(Animator anim)
+    {
+        anim.enabled = true;
+        anim.Rebind();
+        anim.Update(0f);
+
+        float animTime = anim.GetCurrentAnimatorClipInfo(0)[0].clip.length;
+        yield return new WaitForSeconds(animTime);
+
+        anim.enabled = false;
     }
 
     bool DetermineThrowablePrefab()
