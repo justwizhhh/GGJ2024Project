@@ -32,6 +32,14 @@ public class AudioManager : MonoBehaviour
         StartPlayingMusic(MusicType.GAME_MUSIC);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+             PlayOneShot(FMODLib.instance.clapping);
+        }
+    }
+
     /// <summary>
     /// Plays a one-shot audio effect
     /// </summary>
