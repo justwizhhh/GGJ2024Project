@@ -52,10 +52,12 @@ public class GameOver : MonoBehaviour
     {
         UpdateScoreDisplay(PlayerData.instance.currentScore);
 
+
         playerCol = PlayerAnimator.gameObject.GetComponent<BoxCollider2D>();
         throwableManager = FindObjectOfType<ThrowableManager>();
         playerCol.enabled = false;
         throwableManager.enabled = false;
+        throwableManager.StopAllCoroutines();
 
         PlayerAnimator.SetTrigger("Death");
         TrapdoorAnimator.SetTrigger("Death");
