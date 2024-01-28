@@ -31,7 +31,9 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        StartPlayingMusic(MusicType.GAME_MUSIC);
+        EventHandler.GameStateChanged += StartPlayingMusic;
+
+        EventHandler.OnSceneChange(GameState.INTRO);
     }
 
     private void Update()
@@ -56,14 +58,33 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     /// <param name="musicType"></param>
     /// <param name="allowFadeOut"></param>
-    public void StartPlayingMusic(MusicType musicType, bool allowFadeOut = true)
+    public void StartPlayingMusic(GameState state, bool allowFadeOut = true)
     {
-        //musicEventInstance.getPlaybackState(out var result);
-        //if (result == PLAYBACK_STATE.PLAYING)
-        //{
-        //    StopPlayingMusic(allowFadeOut);
-        //}            
-        musicEventInstance = CreateEventInstance(FMODLib.instance.music);           
+        musicEventInstance.getPlaybackState(out var result);
+        if (result == PLAYBACK_STATE.PLAYING)
+        {
+            StopPlayingMusic(allowFadeOut);
+        }
+
+        switch (state)
+        {
+            case GameState.INTRO:
+                musicEventInstance = CreateEventInstance(FMODLib.instance.introMusic);
+                break;
+            case GameState.PLAYING:
+                musicEventInstance = CreateEventInstance(FMODLib.instance.music);
+                break;
+            case GameState.END:
+                musicEventInstance = CreateEventInstance(FMODLib.instance.loseMusic);
+                break;
+            case GameState.CREDITS:
+                musicEventInstance = CreateEventInstance(FMODLib.instance.outroMusic);
+                break;
+            default:
+                break;
+        }
+
+                   
         
         musicEventInstance.start();
     }

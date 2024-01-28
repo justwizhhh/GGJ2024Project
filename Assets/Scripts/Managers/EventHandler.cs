@@ -1,3 +1,4 @@
+using Enumerations;
 using System;
 using UnityEngine;
 
@@ -20,6 +21,7 @@ public class EventHandler : MonoBehaviour
     public static event Action LoadJoke;
     public static event Action PlayerDeath;
 
+    public static event Action<GameState, bool> GameStateChanged;
 
 
     /// <summary>
@@ -140,5 +142,10 @@ public class EventHandler : MonoBehaviour
     public static void OnLoadJoke()
     {
         LoadJoke?.Invoke();
+    }
+
+    public static void OnSceneChange(GameState gameState, bool allowFadeOut = true)
+    {
+        GameStateChanged?.Invoke(gameState, allowFadeOut);
     }
 }

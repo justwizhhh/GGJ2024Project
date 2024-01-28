@@ -50,6 +50,9 @@ public class GameOver : MonoBehaviour
     // Animate the player falling into the trapdoor before showing the game-over menu
     public void StartAnim()
     {
+        EventHandler.OnSceneChange(Enumerations.GameState.END);
+        AudioManager.instance.PlayOneShot(FMODLib.instance.death);
+
         UpdateScoreDisplay(PlayerData.instance.currentScore);
 
 
@@ -83,10 +86,13 @@ public class GameOver : MonoBehaviour
         {
             case 0:
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                EventHandler.OnSceneChange(Enumerations.GameState.PLAYING);
                 break;
 
             case 1:
                 SceneManager.LoadScene(1);
+                EventHandler.OnSceneChange(Enumerations.GameState.INTRO);
+
                 break;
         }
     }

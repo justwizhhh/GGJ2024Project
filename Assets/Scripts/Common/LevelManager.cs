@@ -40,12 +40,20 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        //AudioManager.instance.StartPlayingMusic(Enumerations.MusicType.MAIN_MENU);
+        
     }
 
     // Transition into a new scene
     public void ChangeScene(int sceneID)
     {
+        if (sceneID == 1)
+        {
+            EventHandler.OnSceneChange(Enumerations.GameState.INTRO);
+        }
+        else if (sceneID == 2)
+        {
+            EventHandler.OnSceneChange(Enumerations.GameState.PLAYING);
+        }
         StartCoroutine(fade.StartFade(sceneID));
     }
 

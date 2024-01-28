@@ -78,6 +78,13 @@ MonoBehaviour:
       Data3: 1563172246
       Data4: 387575540
     Path: event:/Music/OutroMusic
+  <loseMusic>k__BackingField:
+    Guid:
+      Data1: -164563226
+      Data2: 1325257571
+      Data3: -84816970
+      Data4: 1971117428
+    Path: event:/Music/LoseMusic
   <atmos>k__BackingField:
     Guid:
       Data1: -378250515

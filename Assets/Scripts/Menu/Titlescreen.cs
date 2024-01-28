@@ -78,6 +78,7 @@ public class Titlescreen : MonoBehaviour
                         break;
                     case 2:
                         current_title_state = title_states.CREDITS;
+                        EventHandler.OnSceneChange(Enumerations.GameState.CREDITS);
                         MainMenu.SetActive(false);
                         CreditsMenu.SetActive(true);
                         current_menu_option = 0;
@@ -99,6 +100,7 @@ public class Titlescreen : MonoBehaviour
 
             case title_states.CREDITS:
                 current_title_state = title_states.TITLE;
+                EventHandler.OnSceneChange(Enumerations.GameState.INTRO);
                 CreditsMenu.SetActive(false);
                 MainMenu.SetActive(true);
                 current_menu_option = 2;

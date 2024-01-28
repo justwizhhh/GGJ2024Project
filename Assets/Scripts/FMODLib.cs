@@ -6,10 +6,11 @@ public class FMODLib : MonoBehaviour
     public static FMODLib instance;
 
     [field: Space(5)]
-    [field: Header("Music/Looping")]
+    [field: Header("Music")]
     [field: SerializeField] public EventReference music { get; private set; }
     [field: SerializeField] public EventReference introMusic { get; private set; }
     [field: SerializeField] public EventReference outroMusic { get; private set; }
+    [field: SerializeField] public EventReference loseMusic { get; private set; }
     [field: SerializeField] public EventReference atmos { get; private set; }
 
     [field: Space(5)]
