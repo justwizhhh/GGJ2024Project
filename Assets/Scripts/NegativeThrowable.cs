@@ -37,13 +37,16 @@ public class NegativeThrowable : MonoBehaviour
 
     void OnClick(Vector2 position)
     {
-        if (Vector2.Distance(position, new Vector2(transform.position.x, transform.position.y)) < clickRange)
+        if (Time.timeScale != 0)
         {
-            DisableScript(scriptToDisable);
+            if (Vector2.Distance(position, new Vector2(transform.position.x, transform.position.y)) < clickRange)
+            {
+                DisableScript(scriptToDisable);
+            }
         }
     }
 
-    public static void DisableScript(MonoBehaviour script)
+        public static void DisableScript(MonoBehaviour script)
     {
         if (script != null)
         {

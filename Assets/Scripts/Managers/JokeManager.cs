@@ -104,9 +104,9 @@ public class JokeManager : MonoBehaviour
     {
         if (queueOfJokes.Count < 1)
         {
-            jokeText.SetText("No more jokes for you...");
-            punchlineText.SetText("No more punchlines either...");
-            return null;
+            listOfAllJokes = LoadJokeObjects();
+            ShuffleListOfAllJokes();
+            return GetNextJoke();
         }
 
         JokeSO joke = GetNewJokesFromQueue();
