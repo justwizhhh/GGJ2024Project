@@ -16,3 +16,4 @@ MonoBehaviour:
   objectClass: 1
   value: 2
   objectType: 1
+  throwable: {fileID: 5995995979481491113, guid: 9592f0c85a748294fa9961eb6c5f56f6, type: 3}

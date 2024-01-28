@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
+using System;
 
 public class ThrowableManager : MonoBehaviour
 {
@@ -70,18 +72,33 @@ public class ThrowableManager : MonoBehaviour
             return;
         }
 
-        int randomSpawnIndex = Random.Range(0, throwableSpawnLocations.Length);
+        int randomSpawnIndex = UnityEngine.Random.Range(0, throwableSpawnLocations.Length);
         Transform spawnLocation = throwableSpawnLocations[randomSpawnIndex];
 
-        GameObject throwablePrefab = DetermineThrowablePrefab()? throwablePrefabPositive:throwablePrefabNegative;            
+        int audienceSelection = (int)((audienceApproval.slider.value - 50f) / 16); // Selects an item for the audience to use depending on how angry/happy they currently are
+
+        GameObject throwablePrefab;
+        if (DetermineThrowablePrefab())
+        {
+            //Pro
+            throwablePrefab = listOfPositiveThrowables[Mathf.Clamp(audienceSelection, 1, 3) - 1].throwable;
+        }
+        else 
+        {
+            //Negative
+            throwablePrefab = listOfNegativeThrowables[1 - Mathf.Clamp(audienceSelection, -3, -1)].throwable;
+        }
+
+        //throwablePrefab = DetermineThrowablePrefab()? throwablePrefabPositive:throwablePrefabNegative;            
 
         GameObject throwable = Instantiate(throwablePrefab, spawnLocation.position, Quaternion.identity);
         ThrowableObject throwableObject = throwable.GetComponent<ThrowableObject>();
 
         if (throwableObject != null) throwableObject.target = player.transform;
 
+
         // Animations
-        int anim = Random.Range(0, 2);
+        int anim = UnityEngine.Random.Range(0, 2);
         if (anim == 0)
         {
             if (!ThrowAnim1.gameObject.activeSelf) { ThrowAnim1.gameObject.SetActive(true); }
@@ -95,6 +112,7 @@ public class ThrowableManager : MonoBehaviour
             ThrowAnim2.gameObject.transform.position = spawnLocation.position;
         }
     }
+
 
     IEnumerator AnimStop(Animator anim)
     {
@@ -132,10 +150,11 @@ public class ThrowableManager : MonoBehaviour
     IEnumerator SpawnThrowablesRandomly()
     {
 
-        float interval = Random.Range(minInterval, maxInterval);
+        float interval = UnityEngine.Random.Range(minInterval, maxInterval);
         yield return new WaitForSeconds(interval);
 
-        SpawnThrowable();
+        if (Time.timeScale != 0) // Stop throwables being spawned while paused
+            SpawnThrowable();
 
         StartCoroutine(SpawnThrowablesRandomly());
     }
