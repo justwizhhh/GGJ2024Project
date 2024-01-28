@@ -57,6 +57,7 @@ public class Titlescreen : MonoBehaviour
 
     public void Select()
     {
+        AudioManager.instance.PlayOneShot(FMODLib.instance.select);
         switch (current_title_state)
         {
             case title_states.INTRO:

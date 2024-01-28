@@ -14,6 +14,11 @@ public class MouseCollider : MonoBehaviour
         rb = this.GetComponent<Rigidbody2D>();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        AudioManager.instance.PlayOneShot(FMODLib.instance.mouseInteracion);
+    }
+
     // Update is called once per frame
     void Update()
     {

@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
     public static float SoundVolume = 1;
 
     private EventInstance musicEventInstance;
+    private EventInstance atmos;
 
     public static AudioManager instance { get; private set; }
 
@@ -34,14 +35,14 @@ public class AudioManager : MonoBehaviour
         EventHandler.GameStateChanged += StartPlayingMusic;
 
         EventHandler.OnSceneChange(GameState.INTRO);
+
+        atmos = CreateEventInstance(FMODLib.instance.atmos);
+        atmos.start();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-             PlayOneShot(FMODLib.instance.clapping);
-        }
+
     }
 
     /// <summary>
@@ -83,8 +84,6 @@ public class AudioManager : MonoBehaviour
             default:
                 break;
         }
-
-                   
         
         musicEventInstance.start();
     }
