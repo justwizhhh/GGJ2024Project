@@ -25,7 +25,7 @@ public class ThrowableObject : MonoBehaviour
         transform.rotation = Quaternion.identity; // Reset rotation
         isThrown = false;
 
-        Debug.Log("ThrowableObject initialized.");
+        //Debug.Log("ThrowableObject initialized.");
     }
 
     void Update()
@@ -62,7 +62,7 @@ public class ThrowableObject : MonoBehaviour
             else
             {
                 Destroy(gameObject);
-                Debug.Log("ThrowableObject destroyed.");
+                //Debug.Log("ThrowableObject destroyed.");
             }
         }
     }

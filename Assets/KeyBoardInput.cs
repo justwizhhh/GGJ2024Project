@@ -1,13 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
-using UnityEngine.Windows;
 
 public class KeyBoardInput : MonoBehaviour
 {
+    Event input;
 
-    Event input = Event.KeyboardEvent("Enter");
+    private void Awake()
+    {
+        input = Event.KeyboardEvent("Enter");
+    }
 
     private void OnGUI()
     {

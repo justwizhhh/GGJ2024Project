@@ -549,8 +549,8 @@ MonoBehaviour:
   - {fileID: 604317400}
   throwablePrefabPositive: {fileID: 5995995979481491113, guid: 131e16b123b5dfc4bb0288b20b275abd, type: 3}
   throwablePrefabNegative: {fileID: 5995995979481491113, guid: 8a3d30d5e959ca64dabad4155ff920c1, type: 3}
-  minInterval: 1
-  maxInterval: 5
+  minInterval: 2
+  maxInterval: 3
   minIntervalModifier: 0.1
   maxIntervalModifier: 0.2
 --- !u!4 &269278378
@@ -3292,7 +3292,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.15
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3301,7 +3301,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 1
+      value: 0.85
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3316,7 +3316,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.15
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3325,7 +3325,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 1
+      value: 0.85
       inSlope: 0
       outSlope: 0
       tangentMode: 0

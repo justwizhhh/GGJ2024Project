@@ -30,8 +30,12 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         StartPlayingMusic(MusicType.GAME_MUSIC);
-    }   
+    }
 
+    /// <summary>
+    /// Plays a one-shot audio effect
+    /// </summary>
+    /// <param name="sound"></param>
     public void PlayOneShot(EventReference sound)
     {
         RuntimeManager.PlayOneShot(sound, audioPosition);

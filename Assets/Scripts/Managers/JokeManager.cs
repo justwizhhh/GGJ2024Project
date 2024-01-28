@@ -26,17 +26,6 @@ public class JokeManager : MonoBehaviour
 
     void Update()
     {
-        // TEST CODE... TO BE REMOVED
-        if(Input.GetKeyUp(KeyCode.N) && currentJoke != null)
-        {
-            AudioManager.instance.PlayOneShot(FMODLib.instance.testOneShot);
-            currentJoke = GetNextJoke();
-        }
-        if (Input.GetKeyUp(KeyCode.M))
-        {
-            AudioManager.instance.StartPlayingMusic(Enumerations.MusicType.MAIN_MENU, false);
-            currentJoke = GetNextJoke();
-        }
 
     }
 

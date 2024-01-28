@@ -10,16 +10,12 @@ public class ThrowableManager : MonoBehaviour
 
     private GameObject player;
 
-    private float timer = 0;
-
     public float minInterval = 5f;
     public float maxInterval = 15f;
 
     public float minIntervalModifier = 0.01f; // Adjusted modifier for closer to 0
     public float maxIntervalModifier = 0.2f;  // Adjusted modifier for closer to 100
 
-    private float originalMinInterval;
-    private float originalMaxInterval;
 
     void Start()
     {
@@ -34,9 +30,6 @@ public class ThrowableManager : MonoBehaviour
             Debug.LogError("AudienceApproval reference is not set in ThrowableManager!");
         }
 
-        originalMinInterval = minInterval;
-        originalMaxInterval = maxInterval;
-
         InitializeThrowables(1);
         StartCoroutine(SpawnThrowablesRandomly());
     }
@@ -47,20 +40,6 @@ public class ThrowableManager : MonoBehaviour
         {
             SpawnThrowable();
         }
-    }
-
-    void IncreaseThrowables(int additionalThrowables)
-    {
-        /*
-        if (activeThrowables + additionalThrowables <= maxThrowables)
-        {
-            InitializeThrowables(additionalThrowables);
-            activeThrowables += additionalThrowables;
-        }
-        else
-        {
-            Debug.LogWarning("Cannot exceed the maximum number of throwables.");
-        }*/
     }
 
     void SpawnThrowable()
@@ -74,33 +53,12 @@ public class ThrowableManager : MonoBehaviour
         int randomSpawnIndex = Random.Range(0, throwableSpawnLocations.Length);
         Transform spawnLocation = throwableSpawnLocations[randomSpawnIndex];
 
-        if (spawnLocation.childCount == 0)
-        {
+        GameObject throwablePrefab = DetermineThrowablePrefab()? throwablePrefabPositive:throwablePrefabNegative;            
 
-            GameObject throwablePrefab;
-            if (DetermineThrowablePrefab())
-            {
-                throwablePrefab = throwablePrefabPositive;
-            }
-            else 
-            {
-                throwablePrefab = throwablePrefabNegative;
-                //throwablePrefab.GetComponent<NegativeThrowable>().damage = 300;
-            }
-            
+        GameObject throwable = Instantiate(throwablePrefab, spawnLocation.position, Quaternion.identity);
+        ThrowableObject throwableObject = throwable.GetComponent<ThrowableObject>();
 
-            GameObject throwable = Instantiate(throwablePrefab, spawnLocation.position, Quaternion.identity);
-            ThrowableObject throwableObject = throwable.GetComponent<ThrowableObject>();
-
-            if (throwableObject != null)
-            {
-                throwableObject.target = player.transform;
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Spawn location already has a throwable.");
-        }
+        if (throwableObject != null) throwableObject.target = player.transform;
     }
 
     bool DetermineThrowablePrefab()
@@ -109,7 +67,12 @@ public class ThrowableManager : MonoBehaviour
         float positiveEffect = audienceApproval.GetPositiveEffect(approvalRating);
         float negativeEffect = audienceApproval.GetNegativeEffect(approvalRating);
 
-        if (positiveEffect >= negativeEffect)
+        float randomFactor = UnityEngine.Random.Range(0.0f,1.0f);
+        float positiveWeightedValue = positiveEffect / (positiveEffect + negativeEffect);
+
+        Debug.Log("Curves: " + positiveEffect + "|" + negativeEffect + " * PosWeight: " + positiveWeightedValue + " | " + randomFactor);
+
+        if (positiveWeightedValue >= randomFactor)
         {
             return true;
         }
@@ -121,30 +84,12 @@ public class ThrowableManager : MonoBehaviour
 
     IEnumerator SpawnThrowablesRandomly()
     {
-        AdjustInterval();
 
         float interval = Random.Range(minInterval, maxInterval);
-        Debug.Log(interval);
         yield return new WaitForSeconds(interval);
 
         SpawnThrowable();
 
         StartCoroutine(SpawnThrowablesRandomly());
-    }
-
-    void AdjustInterval()
-    {
-        float approvalRating = audienceApproval.slider.value;
-
-        // Adjust the interval modifiers based on approval rating
-        float modifier = 1f;
-
-        if (approvalRating < 5 || approvalRating > 95)
-        {
-            modifier = Mathf.Lerp(minIntervalModifier, maxIntervalModifier, Mathf.Abs(approvalRating - 50) / 50f);
-        }
-
-        minInterval = originalMinInterval * modifier;
-        maxInterval = originalMaxInterval * modifier;
     }
 }
