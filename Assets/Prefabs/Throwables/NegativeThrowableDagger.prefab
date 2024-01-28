@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1900442004080326558}
   - component: {fileID: 3605533698293598108}
   - component: {fileID: 5223814629209723680}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: NegativeThrowableDagger
   m_TagString: Throwable
   m_Icon: {fileID: 0}

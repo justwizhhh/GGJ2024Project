@@ -156,7 +156,6 @@ Transform:
   - {fileID: 269278378}
   - {fileID: 337908514}
   - {fileID: 641362333}
-  - {fileID: 1119368751}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &32066610
@@ -1142,7 +1141,7 @@ GameObject:
   - component: {fileID: 504625883}
   - component: {fileID: 504625884}
   - component: {fileID: 504625885}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
