@@ -8,7 +8,7 @@ public class KeyBoardInput : MonoBehaviour
 
     private void Awake()
     {
-        input = Event.KeyboardEvent("Enter");
+        input = Event.KeyboardEvent("0");
     }
 
     public LevelManager levelManager;

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PositiveThrowable : MonoBehaviour
 {
     [SerializeField] private float clickMultipler = 4;
+    [SerializeField] private float pointMultipler = 1;
     [SerializeField] private float clickRange = 2;
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,7 @@ public class PositiveThrowable : MonoBehaviour
         {
             Destroy(gameObject);
             //Positive Action
-            GrantPoints(1);
+            GrantPoints(pointMultipler);
 
             //Debug.Log("ThrowableObject touched player and destroyed.");
         }
@@ -42,7 +43,7 @@ public class PositiveThrowable : MonoBehaviour
     {
         if (Vector2.Distance(position, new Vector2(transform.position.x, transform.position.y)) < clickRange) 
         {
-            GrantPoints(clickMultipler);
+            GrantPoints(pointMultipler * clickMultipler);
             Destroy(gameObject);
         }
 

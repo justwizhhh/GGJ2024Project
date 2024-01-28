@@ -131,6 +131,7 @@ MonoBehaviour:
   arcHeight: 6
   throwSpeed: 0.25
   spinSpeed: 270
+  splashParticle: {fileID: 3470633437306558784, guid: cecd7e90de2daf64babb259bb7221a9a, type: 3}
 --- !u!114 &3605533698293598108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scriptToDisable: {fileID: 1900442004080326558}
   clickRange: 4
+  damamgeMod: 1
 --- !u!58 &5223814629209723680
 CircleCollider2D:
   m_ObjectHideFlags: 0

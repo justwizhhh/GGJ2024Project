@@ -512,7 +512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 266049578}
   - component: {fileID: 266049579}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: KillZone
   m_TagString: Kill Zones
   m_Icon: {fileID: 0}

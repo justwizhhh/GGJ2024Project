@@ -93,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scriptToDisable: {fileID: 1900442004080326558}
   clickRange: 4
+  damamgeMod: 2
 --- !u!58 &5223814629209723680
 CircleCollider2D:
   m_ObjectHideFlags: 0
