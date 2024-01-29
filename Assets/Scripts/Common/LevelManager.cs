@@ -55,6 +55,7 @@ public class LevelManager : MonoBehaviour
             EventHandler.OnSceneChange(Enumerations.GameState.PLAYING);
         }
         StartCoroutine(fade.StartFade(sceneID));
+
     }
 
     void Update()
