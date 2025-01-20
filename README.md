@@ -1,4 +1,4 @@
-# (ARCHIVE) Global Game Jam 2024 Project
+# Open Mic Knight (ARCHIVE)
 
 ## Play the final submitted build here! - https://justwiz.itch.io/open-mic-knight
 
